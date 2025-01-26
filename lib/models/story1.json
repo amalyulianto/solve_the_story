@@ -1,0 +1,152 @@
+[
+    {
+        "id": "1",
+        "level": "hard",
+        "titleID": "Foto yang Hilang",
+        "questionID": "Seorang fotografer profesional menemukan semua foto dalam album pernikahannya telah hilang, kecuali satu foto yang tampak normal.",
+        "solutionID": "Foto yang tersisa adalah sebuah foto negatif yang telah dicetak. Foto-foto lainnya disembunyikan di balik lapisan emulsi pada negatif tersebut.",
+        "titleEN": "Missing Photos",
+        "questionEN": "A professional photographer found all the photos in his wedding album missing, except for one that looked normal.",
+        "solutionEN": "The remaining photo was a printed negative. The other photos were hidden behind the emulsion layer of the negative."
+    },
+    {
+        "id": "2",
+        "level": "medium",
+        "titleID": "Buku yang Terbalik",
+        "questionID": "Semua buku di perpustakaan sekolah tiba-tiba terbalik 180 derajat. Tidak ada tanda-tanda kerusakan atau bekas air.",
+        "solutionID": "Perpustakaan berada di dekat rel kereta api. Getaran dari kereta yang melintas setiap hari menyebabkan buku-buku di rak paling atas bergeser sedikit demi sedikit hingga akhirnya terbalik.",
+        "titleEN": "Upside Down Books",
+        "questionEN": "All the books in the school library were suddenly turned 180 degrees. There were no signs of damage or water marks.",
+        "solutionEN": "The library was located near the railway tracks. The vibrations from the trains passing by every day caused the books on the top shelves to shift slightly until they eventually turned upside down."
+    },
+    {
+        "id": "3",
+        "level": "hard",
+        "titleID": "Jam Tangan yang Lambat",
+        "questionID": "Jam tangan seorang atlet selalu berjalan lebih lambat 5 menit dibandingkan jam dinding. Namun, saat ia mengikuti lomba lari, jam tangannya menunjukkan waktu yang tepat.",
+        "solutionID": "Jam tangan tersebut memiliki fitur khusus yang secara otomatis menyesuaikan waktu berdasarkan kecepatan gerakan pergelangan tangan. Saat berlari, fitur ini mengaktifkan dan membuat jam tangan menunjukkan waktu yang akurat.",
+        "titleEN": "Slow Watch",
+        "questionEN": "An athlete's watch always runs 5 minutes slower than the wall clock. However, when he participated in a running race, his watch showed the correct time.",
+        "solutionEN": "The watch had a special feature that automatically adjusted the time based on the movement of the wrist. When running, this feature activated and made the watch show the accurate time."
+    },
+    {
+        "id": "4",
+        "level": "medium",
+        "titleID": "Kunci Mobil yang Hilang",
+        "questionID": "Kunci mobil seorang pengusaha hilang di dalam kantornya yang sangat luas. Ia sudah mencari ke seluruh sudut, tetapi tidak ditemukan.",
+        "solutionID": "Kunci mobil tersebut tertinggal di dalam saku jas yang ia gantung di gantungan baju yang sama dengan jas milik asistennya.",
+        "titleEN": "Lost Car Key",
+        "questionEN": "A businessman lost his car key inside his very large office. He had searched every corner, but it couldn't be found.",
+        "solutionEN": "The car key was left in the pocket of his suit which he hung on the same hanger as his assistant's suit."
+    },
+    {
+        "id": "5",
+        "level": "hard",
+        "titleID": "Lukisan yang Berubah",
+        "questionID": "Sebuah lukisan abstrak di galeri seni selalu tampak berbeda setiap kali dilihat. Tidak ada yang bisa menjelaskan perubahan tersebut.",
+        "solutionID": "Lukisan itu sebenarnya adalah sebuah layar proyeksi yang menampilkan karya seni digital yang terus berubah.",
+        "titleEN": "Changing Painting",
+        "questionEN": "An abstract painting in an art gallery always looks different each time it is viewed. No one can explain the changes.",
+        "solutionEN": "The painting is actually a projection screen displaying a constantly changing digital artwork."
+    },
+    {
+        "id": "6",
+        "level": "medium",
+        "titleID": "Jam yang Berjalan Mundur",
+        "questionID": "Jam dinding di kamar anak-anak selalu berjalan mundur. Baterainya sudah diganti, tetapi tetap saja berjalan mundur.",
+        "solutionID": "Jarum jam tersebut terpasang terbalik.",
+        "titleEN": "Backward Clock",
+        "questionEN": "The wall clock in the children's room always runs backward. The battery has been replaced, but it still runs backward.",
+        "solutionEN": "The clock hands are attached backward."
+    },
+    {
+        "id": "7",
+        "level": "easy",
+        "titleID": "Buku yang Hilang",
+        "questionID": "Sebuah buku tebal hilang dari rak buku di perpustakaan. Rak buku tersebut sudah diperiksa berulang kali, tetapi buku itu tidak ditemukan.",
+        "solutionID": "Buku tersebut terjepit di antara dua buku yang sama tebalnya sehingga sulit terlihat.",
+        "titleEN": "Missing Book",
+        "questionEN": "A thick book disappeared from the bookshelf in the library. The bookshelf has been checked repeatedly, but the book could not be found.",
+        "solutionEN": "The book is sandwiched between two equally thick books, making it difficult to see."
+    },
+    {
+        "id": "8",
+        "level": "hard",
+        "titleID": "Foto yang Berkedip",
+        "questionID": "Sebuah foto keluarga terlihat berkedip-kedip ketika dilihat dari sudut tertentu. Tidak ada kerusakan pada foto tersebut.",
+        "solutionID": "Di balik foto tersebut terdapat sebuah pesan rahasia yang ditulis dengan tinta yang hanya terlihat jika terkena cahaya pada sudut tertentu.",
+        "titleEN": "Blinking Photo",
+        "questionEN": "A family photo appears to blink when viewed from a certain angle. There is no damage to the photo.",
+        "solutionEN": "There is a secret message written on the back of the photo with ink that is only visible when exposed to light at a certain angle."
+    },
+    {
+        "id": "9",
+        "level": "medium",
+        "titleID": "Koin yang Hilang",
+        "questionID": "Seorang anak kehilangan koin di dalam mobil. Ia sudah mencari di seluruh bagian mobil, tetapi tidak ditemukan.",
+        "solutionID": "Koin tersebut terjebak di sela-sela kursi mobil dan tergulung di bawah karpet.",
+        "titleEN": "Lost Coin",
+        "questionEN": "A child lost a coin in the car. He had searched the entire car, but it could not be found.",
+        "solutionEN": "The coin is stuck in the gap between the car seats and rolled under the carpet."
+    },
+    {
+        "id": "10",
+        "level": "hard",
+        "titleID": "Kematian Misterius",
+        "questionID": "Seorang penulis terkenal ditemukan tewas di ruang kerjanya. Semua pintu dan jendela terkunci dari dalam. Tidak ada tanda-tanda adanya paksaan. Apa yang terjadi?",
+        "solutionID": "Penulis itu meninggal karena alergi terhadap serbuk sari bunga yang ada di vas bunga di mejanya. Ia menggaruk-garuk tangannya hingga terluka dan terkena infeksi yang menyebabkan kematian.",
+        "titleEN": "Mysterious Death",
+        "questionEN": "A famous writer was found dead in his study. All doors and windows were locked from the inside. There were no signs of forced entry. What happened?",
+        "solutionEN": "The writer died from an allergy to pollen from the flowers in the vase on his desk. He scratched his arm until it was injured and got an infection that caused death."
+    },
+    {
+        "id": "11",
+        "level": "medium",
+        "titleID": "Perhiasan Hilang",
+        "questionID": "Perhiasan berlian milik seorang sosialita hilang dari kamar hotelnya. Semua pintu dan jendela dalam keadaan terkunci. Siapa pelakunya?",
+        "solutionID": "Pelakunya adalah petugas kebersihan hotel yang memiliki pengetahuan tentang jadwal tamu. Ia memanfaatkan kesempatan saat kamar sedang dibersihkan untuk mengambil perhiasan tersebut.",
+        "titleEN": "Missing Jewelry",
+        "questionEN": "A socialite's diamond jewelry went missing from her hotel room. All doors and windows were locked. Who is the culprit?",
+        "solutionEN": "The culprit was the hotel maid who had knowledge of the guest's schedule. She took advantage of the opportunity when the room was being cleaned to take the jewelry."
+    },
+    {
+        "id": "12",
+        "level": "easy",
+        "titleID": "Sidik Jari Palsu",
+        "questionID": "Seorang detektif menemukan sidik jari di tempat kejadian perkara. Namun, setelah diperiksa, sidik jari tersebut tidak cocok dengan siapa pun yang ada di daftar tersangka.",
+        "solutionID": "Sidik jari tersebut adalah cetakan palsu yang dibuat oleh pelaku untuk mengalihkan perhatian polisi.",
+        "titleEN": "False Fingerprints",
+        "questionEN": "A detective found fingerprints at the crime scene. However, after examination, the fingerprints did not match anyone on the suspect list.",
+        "solutionEN": "The fingerprints were fake prints made by the perpetrator to divert the police's attention."
+    },
+    {
+        "id": "13",
+        "level": "hard",
+        "titleID": "Pesan Rahasia",
+        "questionID": "Seorang detektif menemukan pesan rahasia yang ditulis dengan tinta tak terlihat di tempat kejadian perkara. Apa arti pesan tersebut?",
+        "solutionID": "Pesan tersebut adalah petunjuk menuju tempat persembunyian barang bukti yang ditulis dengan kode yang hanya bisa dibaca oleh pelaku dan orang kepercayaannya.",
+        "titleEN": "Secret Message",
+        "questionEN": "A detective found a secret message written in invisible ink at the crime scene. What does the message mean?",
+        "solutionEN": "The message is a clue to the hiding place of the evidence, written in a code that only the perpetrator and their trusted person can read."
+    },
+    {
+        "id": "14",
+        "level": "medium",
+        "titleID": "Korban yang Masih Hidup",
+        "questionID": "Seorang korban pembunuhan ditemukan dalam keadaan hidup di rumah sakit. Bagaimana bisa?",
+        "solutionID": "Korban sebenarnya adalah kembaran dari orang yang tewas. Pelaku membunuh orang yang salah.",
+        "titleEN": "The Living Victim",
+        "questionEN": "A murder victim was found alive in the hospital. How is that possible?",
+        "solutionEN": "The victim was actually a twin of the person who was killed. The perpetrator killed the wrong person."
+    },
+    {
+        "id": "15",
+        "level": "hard",
+        "titleID": "Kematian di Kereta",
+        "questionID": "Seorang penumpang ditemukan tewas di dalam kereta api yang sedang melaju. Tidak ada tanda-tanda kekerasan. Apa penyebab kematiannya?",
+        "solutionID": "Korban meninggal karena keracunan makanan yang dibawa sendiri. Ia memiliki alergi terhadap kacang yang tidak ia sadari telah tercampur dalam makanannya.",
+        "titleEN": "Death on the Train",
+        "questionEN": "A passenger was found dead inside a moving train. There were no signs of violence. What caused the death?",
+        "solutionEN": "The victim died from food poisoning caused by the food they brought themselves. They had an allergy to peanuts, which they didn't realize had been mixed into their food."
+    }
+]
