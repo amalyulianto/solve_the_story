@@ -4,7 +4,7 @@ import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/reusable_text.dart';
 
 class StoryCardButton extends StatelessWidget {
-  const StoryCardButton(
+  StoryCardButton(
       {super.key,
       required this.text,
       required this.subText,
@@ -23,7 +23,9 @@ class StoryCardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      customBorder:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       onTap: onTap,
       child: Stack(
         alignment: Alignment.center,
@@ -31,44 +33,66 @@ class StoryCardButton extends StatelessWidget {
           Opacity(
             opacity: isLocked ? 0.4 : 1.0,
             child: Container(
+              height: 250,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: bgColor),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 16,
+                borderRadius: BorderRadius.circular(10),
+                color: bgColor,
               ),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ReusableText(
-                        text: text,
-                        size: 16,
-                        maxLines: 3,
-                        fontWeight: FontWeight.w900,
-                        textAlign: TextAlign.start,
-                        color: isDark ? Colors.white : Colors.black,
-                      ),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      ReusableText(
-                        text: subText,
-                        textAlign: TextAlign.start,
-                        maxLines: 2,
-                        size: 12,
-                        fontWeight: FontWeight.normal,
-                        color: isDark ? Colors.white70 : Colors.black87,
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 20,
+                      bottom: 16,
+                      left: 16,
+                      right: 16,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: ReusableText(
+                            text: text,
+                            size: 16,
+                            maxLines: 3,
+                            fontWeight: FontWeight.w900,
+                            textAlign: TextAlign.center,
+                            color: isDark ? Colors.white : Colors.black,
+                          ),
+                        ),
+                        // Spacer(),
+                        SizedBox(height: 16),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Image.asset(
+                            image,
+                            width: 60,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Expanded(
-                    child: Image.asset(
-                      image,
-                      // fit: BoxFit.fill,
+                  Container(
+                    padding:
+                        EdgeInsets.only(top: 4, bottom: 8, left: 8, right: 8),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                      border: Border.all(color: bgColor, width: 1),
+                    ),
+                    child: Text(
+                      "Summer Stories",
+                      textAlign: TextAlign.right,
+                      style: onlyText.copyWith(),
                     ),
                   ),
                 ],

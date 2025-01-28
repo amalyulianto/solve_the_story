@@ -1,15 +1,32 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
+import 'package:provider/provider.dart';
 import 'package:solve_the_story/pages/story_question_page.dart';
+import 'package:solve_the_story/providers/story_provider.dart';
 import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/story_card_button.dart';
 
 class ChooseStoryPage extends StatelessWidget {
-  const ChooseStoryPage({super.key});
+  ChooseStoryPage({super.key});
   static String route = '/story/choose_story';
+
+  List<Color> randomColors = [
+    cardBlue,
+    cardBlue,
+    cardDarkBlue,
+    cardGreen, cardGreen,
+    // cardLeaf,
+    cardPink,
+    cardNavy
+  ];
+  Random random = Random();
+
   @override
   Widget build(BuildContext context) {
+    StoryProvider storyProvider = Provider.of<StoryProvider>(context);
     return Scaffold(
         backgroundColor: black1,
         appBar: AppBar(
@@ -42,111 +59,36 @@ class ChooseStoryPage extends StatelessWidget {
                 // this is the first card button
                 SizedBox(
                   height: MediaQuery.of(context).size.height - 100,
-                  child: GridView.count(
-                    childAspectRatio: 1 / 1.5,
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
-                    children: [
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories',
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 1 / 1.5,
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 0,
+                    ),
+                    itemCount: storyProvider.allStories.length,
+                    itemBuilder: (context, index) {
+                      return StoryCardButton(
+                        image: "assets/images/object1.png",
+                        bgColor: randomColors[random.nextInt(7)],
+                        text:
+                            storyProvider.allStories[index].titleId.toString(),
                         subText: '15 Stories, about what yaa.',
                         isLocked: false,
                         isDark: true,
                         onTap: () {
                           Get.to(
-                            () => const StoryQuestionPage(),
+                            () => StoryQuestionPage(
+                              storyIndex: storyProvider.allStories[index],
+                            ),
                             transition: Transition.cupertino,
                             duration: const Duration(
                               milliseconds: 800,
                             ),
                           );
                         },
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories that I want to tell you!',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: true,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: false,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories that I want to tell you!',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: true,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: false,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories that I want to tell you!',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: true,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: false,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories that I want to tell you!',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: true,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: false,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                      StoryCardButton(
-                        image: "assets/images/story2.png",
-                        bgColor: red4,
-                        text: 'Summer Stories that I want to tell you!',
-                        subText: '15 Stories, about what yaa.',
-                        isLocked: true,
-                        isDark: true,
-                        onTap: () {},
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(

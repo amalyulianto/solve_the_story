@@ -1,13 +1,19 @@
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+// import 'package:provider/provider.dart';
+import 'package:solve_the_story/models/story_model.dart';
+// import 'package:solve_the_story/providers/story_provider.dart';
 import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/reusable_text.dart';
 import 'package:solve_the_story/widgets/story_card.dart';
 
 class StoryQuestionPage extends StatefulWidget {
-  const StoryQuestionPage({super.key});
+  const StoryQuestionPage({super.key, required this.storyIndex});
+
+  final Story storyIndex;
 
   @override
   State<StoryQuestionPage> createState() => _StoryQuestionPageState();
@@ -18,6 +24,12 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
   late AnimationController _controller;
   late Animation _animation;
   AnimationStatus _status = AnimationStatus.dismissed;
+  final audioPlayer = AudioPlayer();
+
+  void playSound() {
+    final player = AudioPlayer();
+    player.play(AssetSource('audios/paper.mp3'));
+  }
 
   @override
   void initState() {
@@ -35,6 +47,7 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
 
   @override
   Widget build(BuildContext context) {
+    // StoryProvider storyProvider = Provider.of<StoryProvider>(context);
     return Scaffold(
       backgroundColor: black1,
       appBar: AppBar(
@@ -64,8 +77,14 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
           GestureDetector(
             onTap: () {
               if (_status == AnimationStatus.dismissed) {
+                audioPlayer.play(
+                  AssetSource('audios/paper.mp3'),
+                );
                 _controller.forward();
               } else {
+                audioPlayer.play(
+                  AssetSource('audios/paper.mp3'),
+                );
                 _controller.reverse();
               }
             },
@@ -75,19 +94,21 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                 ..setEntry(3, 2, 0.0015)
                 ..rotateY(pi * _animation.value),
               child: _animation.value <= 0.5
-                  ? const StoryCard(
-                      title: 'A story of Scarlet',
-                      content: 'Secret recipe of KFC is here',
-                      image: 'assets/images/story2.png',
+                  ? StoryCard(
+                      type: 'Question',
+                      title: widget.storyIndex.titleId.toString(),
+                      content: widget.storyIndex.questionId.toString(),
+                      image: 'assets/images/object1.png',
                       bgColor: Colors.white,
                       textColor: Colors.black,
                     )
                   : Transform.scale(
                       scaleX: -1,
                       child: StoryCard(
-                        title: 'A story of Scarlet',
-                        content: 'Secret recipe of KFC is here',
-                        image: 'assets/images/story2.png',
+                        type: 'Answer',
+                        title: widget.storyIndex.titleId.toString(),
+                        content: widget.storyIndex.solutionId.toString(),
+                        image: 'assets/images/object1.png',
                         bgColor: Colors.black,
                         textColor: Colors.white,
                       ),
@@ -98,8 +119,10 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
           const SizedBox(
             height: 4,
           ),
-          const ReusableText(
-            text: 'Tap the card to see answer!',
+          ReusableText(
+            text: _status == AnimationStatus.dismissed
+                ? 'Tap the card to see answer!'
+                : 'Tap to flip back!',
             size: 14,
             fontWeight: FontWeight.normal,
             color: Colors.white,
@@ -118,7 +141,11 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                     side: BorderSide(color: Colors.white, width: 1.5)),
               ),
               onPressed: () {
+                audioPlayer.play(
+                  AssetSource('audios/beep.mp3'),
+                );
                 Navigator.pop(context);
+
                 // if (_status == AnimationStatus.dismissed) {
                 //   _controller.forward();
                 // } else {

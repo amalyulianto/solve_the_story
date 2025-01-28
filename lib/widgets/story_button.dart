@@ -22,7 +22,10 @@ class StoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      customBorder: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
@@ -34,9 +37,15 @@ class StoryButton extends StatelessWidget {
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SizedBox(
-              width: 96,
-              child: Image.asset(image),
+            Padding(
+              padding: EdgeInsets.only(top: 4, bottom: 04, left: 8, right: 2),
+              child: SizedBox(
+                width: 60,
+                child: Image.asset(
+                  image,
+                  color: Colors.white,
+                ),
+              ),
             ),
             const Flexible(
               child: SizedBox(

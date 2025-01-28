@@ -18,6 +18,8 @@ dependencies:
   google_fonts: ^6.2.1
   get: ^4.6.6
   smooth_page_indicator: ^1.2.0+3
+  provider: ^6.0.1
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +32,4 @@ flutter:
   assets:
     - assets/images/
     - assets/story1.json
+    - assets/audios/

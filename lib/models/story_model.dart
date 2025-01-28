@@ -50,10 +50,10 @@ class Story {
       };
 }
 
-enum Level { EASY, HARD, MEDIUM }
+enum Level { easy, hard, medium }
 
 final levelValues = EnumValues(
-    {"easy": Level.EASY, "hard": Level.HARD, "medium": Level.MEDIUM});
+    {"easy": Level.easy, "hard": Level.hard, "medium": Level.medium});
 
 class EnumValues<T> {
   Map<String, T> map;

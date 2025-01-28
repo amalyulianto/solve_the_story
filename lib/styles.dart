@@ -28,6 +28,13 @@ Color black2 = const Color(0xff444444);
 Color black3 = const Color(0xff3c3c3c);
 Color white1 = Colors.white;
 
+Color cardBlue = const Color(0xff0083e3);
+Color cardLeaf = const Color(0xff5F9F98);
+Color cardPink = const Color(0xffFF527C);
+Color cardDarkBlue = const Color(0xff013255);
+Color cardGreen = const Color(0xff00BFA8);
+Color cardNavy = const Color(0xff0A82A8);
+
 LinearGradient blueGradient = LinearGradient(colors: [blue1, blue2]);
 LinearGradient purpleGradient = LinearGradient(colors: [purple1, purple2]);
 LinearGradient redGradient = LinearGradient(colors: [red1, red2]);

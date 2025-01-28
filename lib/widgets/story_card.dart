@@ -9,6 +9,7 @@ class StoryCard extends StatelessWidget {
     required this.title,
     required this.content,
     required this.textColor,
+    required this.type,
   });
 
   final Color bgColor;
@@ -16,6 +17,7 @@ class StoryCard extends StatelessWidget {
   final String title;
   final String content;
   final Color textColor;
+  final String type;
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +36,27 @@ class StoryCard extends StatelessWidget {
         thumbVisibility: true,
         child: ListView(
           children: [
+            ReusableText(
+              text: type,
+              size: 14,
+              fontWeight: FontWeight.normal,
+              color: textColor,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+            ),
+            SizedBox(
+              height: 12,
+            ),
             Image.asset(
               image,
-              height: 120,
+              height: 100,
             ),
             const SizedBox(
               height: 12,
             ),
             ReusableText(
               text: title,
-              size: 16,
+              size: 22,
               fontWeight: FontWeight.normal,
               color: textColor,
               textAlign: TextAlign.center,
@@ -55,7 +68,7 @@ class StoryCard extends StatelessWidget {
             SizedBox(
               child: ReusableText(
                 text: content,
-                size: 14,
+                size: 20,
                 fontWeight: FontWeight.bold,
                 color: textColor,
                 textAlign: TextAlign.center,

@@ -59,14 +59,14 @@ class SolveStoryPage extends StatelessWidget {
                 ),
                 // this is the first card button
                 StoryButton(
-                  image: "assets/images/story2.png",
+                  image: "assets/images/object1.png",
                   bgColor: red4,
                   text: 'Summer Stories that I want to tell you!',
                   subText: '15 Stories, about what yaa.',
                   isLocked: false,
                   isDark: true,
                   onTap: () {
-                    Get.to(() => const ChooseStoryPage(),
+                    Get.to(() => ChooseStoryPage(),
                         transition: Transition.cupertino,
                         duration: const Duration(milliseconds: 800));
                   },
