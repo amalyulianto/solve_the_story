@@ -20,14 +20,28 @@ class StoryProvider extends ChangeNotifier {
   // }
   String errorMessage = '';
 
-  Future<void> fetchAllStories(IdProvider idProvider) async {
+  Future<void> fetchAllStories(int id) async {
     try {
-      int id = idProvider.currentId;
       allStories = await ApiService.getAllStories(id);
+      await _loadDoneStories();
       notifyListeners();
     } catch (error) {
       errorMessage = 'Error fetching stories: $error';
       notifyListeners();
+    }
+  }
+
+  Future<void> _loadDoneStories() async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String>? doneStoriesJson = prefs.getStringList('doneStories') ?? [];
+    for (var storyJson in doneStoriesJson) {
+      var doneStory = Story.fromJson(jsonDecode(storyJson));
+      var story = allStories.firstWhere(
+        (s) => s.id == doneStory.id,
+      );
+      if (story != null) {
+        story.isDone = true;
+      }
     }
   }
 

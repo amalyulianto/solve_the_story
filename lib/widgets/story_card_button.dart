@@ -27,7 +27,7 @@ class StoryCardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       customBorder:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       onTap: onTap,
       child: Stack(
         alignment: Alignment.center,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AudioProvider with ChangeNotifier {
   late AudioPlayer _audioPlayer;
   bool _isPlaying = false;
+  final double _volume = 0.5; // Default volume level
 
   AudioProvider() {
     _audioPlayer = AudioPlayer();
@@ -14,7 +15,8 @@ class AudioProvider with ChangeNotifier {
 
   void playMusic() async {
     await _audioPlayer.setReleaseMode(ReleaseMode.loop);
-    await _audioPlayer.play(AssetSource('audios/bgMusic.mp3'));
+    await _audioPlayer.setVolume(_volume);
+    await _audioPlayer.play(AssetSource('audios/theme.mp3'));
     _isPlaying = true;
     notifyListeners();
   }

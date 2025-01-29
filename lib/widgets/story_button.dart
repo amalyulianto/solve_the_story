@@ -8,14 +8,12 @@ class StoryButton extends StatelessWidget {
       required this.text,
       required this.subText,
       required this.bgColor,
-      required this.image,
       required this.isLocked,
       required this.isDark,
       required this.onTap});
   final String text;
   final String subText;
   final Color bgColor;
-  final String image;
   final bool isLocked;
   final bool isDark;
   final VoidCallback onTap;
@@ -37,16 +35,6 @@ class StoryButton extends StatelessWidget {
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Padding(
-              padding: EdgeInsets.only(top: 4, bottom: 04, left: 8, right: 2),
-              child: SizedBox(
-                width: 60,
-                child: Image.asset(
-                  image,
-                  color: Colors.white,
-                ),
-              ),
-            ),
             const Flexible(
               child: SizedBox(
                 width: 12,
@@ -59,7 +47,7 @@ class StoryButton extends StatelessWidget {
                 children: [
                   ReusableText(
                     text: text,
-                    size: 16,
+                    size: 20,
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.start,
                     color: isDark ? Colors.white : Colors.black,
@@ -70,7 +58,7 @@ class StoryButton extends StatelessWidget {
                   ReusableText(
                     text: subText,
                     textAlign: TextAlign.start,
-                    size: 12,
+                    size: 16,
                     fontWeight: FontWeight.normal,
                     color: isDark ? Colors.white70 : Colors.black87,
                   ),

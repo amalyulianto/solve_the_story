@@ -82,10 +82,9 @@ class SolveStoryPage extends StatelessWidget {
                 ),
                 // this is the first card button
                 StoryButton(
-                  image: "assets/images/object1.png",
                   bgColor: cardBlue,
-                  text: 'Summer Stories that I want to tell you!',
-                  subText: '15 Stories, about what yaa.',
+                  text: 'Normal Deck 1',
+                  subText: '23 Stories',
                   isLocked: false,
                   isDark: true,
                   onTap: () {
@@ -99,10 +98,9 @@ class SolveStoryPage extends StatelessWidget {
                   height: 12,
                 ),
                 StoryButton(
-                  image: "assets/images/object1.png",
                   bgColor: cardPink,
-                  text: 'Winter Stories that I want to tell you!',
-                  subText: '15 Stories, about what yaa.',
+                  text: 'Normal Deck 2',
+                  subText: '15 Stories',
                   isLocked: false,
                   isDark: true,
                   onTap: () {
@@ -116,14 +114,29 @@ class SolveStoryPage extends StatelessWidget {
                   height: 12,
                 ),
                 StoryButton(
-                  image: "assets/images/object1.png",
                   bgColor: cardDarkBlue,
-                  text: 'Summer Stories that I want to tell you!',
-                  subText: '15 Stories, about what yaa.',
+                  text: 'Detective Deck 1',
+                  subText: '15 Stories - Detective Mode!',
                   isLocked: false,
                   isDark: true,
                   onTap: () {
                     idProvider.setId(3);
+                    Get.to(() => ChooseStoryPage(),
+                        transition: Transition.cupertino,
+                        duration: const Duration(milliseconds: 800));
+                  },
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                StoryButton(
+                  bgColor: cardDarkBlue,
+                  text: 'Detective Deck 2',
+                  subText: '15 Stories - Detective Mode!',
+                  isLocked: false,
+                  isDark: true,
+                  onTap: () {
+                    idProvider.setId(4);
                     Get.to(() => ChooseStoryPage(),
                         transition: Transition.cupertino,
                         duration: const Duration(milliseconds: 800));

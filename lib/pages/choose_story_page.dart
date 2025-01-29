@@ -118,17 +118,17 @@ class ChooseStoryPage extends StatelessWidget {
                         Consumer2<StoryProvider, IdProvider>(builder:
                             (context, storyProvider, idProvider, child) {
                           return FutureBuilder(
-                              future: storyProvider.fetchAllStories(idProvider),
+                              future: storyProvider
+                                  .fetchAllStories(idProvider.currentId),
                               builder: (context, snapshot) {
                                 return SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height - 100,
+                                  height: MediaQuery.of(context).size.height,
                                   child: GridView.builder(
                                     gridDelegate:
                                         SliverGridDelegateWithFixedCrossAxisCount(
                                       childAspectRatio: 1 / 1.5,
                                       crossAxisCount: 2,
-                                      crossAxisSpacing: 12,
+                                      crossAxisSpacing: 8,
                                       mainAxisSpacing: 0,
                                     ),
                                     itemCount: storyProvider.allStories.length,
@@ -144,7 +144,7 @@ class ChooseStoryPage extends StatelessWidget {
                                             storyProvider
                                                 .allStories[index].color)],
                                         text: storyProvider
-                                            .allStories[index].titleId
+                                            .allStories[index].titleEn
                                             .toString(),
                                         subText: '15 Stories, about what yaa.',
                                         isLocked: false,

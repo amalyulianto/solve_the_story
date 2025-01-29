@@ -1,0 +1,167 @@
+[
+    {
+        "id": "16",
+        "level": "medium",
+        "titleID": "Barang Bukti yang Hilang",
+        "questionID": "Barang bukti utama dalam sebuah kasus pembunuhan hilang dari tempat penyimpanan bukti di kantor polisi. Siapa pelakunya?",
+        "solutionID": "Pelakunya adalah seorang petugas forensik yang memiliki dendam terhadap korban. Ia memanfaatkan aksesnya untuk mengambil barang bukti tersebut.",
+        "titleEN": "Missing Evidence",
+        "questionEN": "The main evidence in a murder case disappeared from the evidence storage room at the police station. Who is the culprit?",
+        "solutionEN": "The culprit was a forensic officer who had a grudge against the victim. He took advantage of his access to take the evidence.",
+        "color": "0"
+    },
+    {
+        "id": "17",
+        "level": "easy",
+        "titleID": "Sidik Jari di Jendela",
+        "questionID": "Sidik jari ditemukan di jendela sebuah rumah yang baru saja dibobol. Namun, sidik jari tersebut tidak cocok dengan siapa pun yang tinggal di rumah tersebut.",
+        "solutionID": "Sidik jari tersebut adalah milik seorang anak kecil yang sedang bermain di luar rumah dan secara tidak sengaja menyentuh jendela.",
+        "titleEN": "Fingerprints on the Window",
+        "questionEN": "Fingerprints were found on the window of a house that had just been burglarized. However, the fingerprints did not match anyone who lived in the house.",
+        "solutionEN": "The fingerprints belonged to a small child who was playing outside and accidentally touched the window.",
+        "color": "1"
+    },
+    {
+        "id": "18",
+        "level": "hard",
+        "titleID": "Pesan Kode",
+        "questionID": "Sebuah pesan kode ditemukan di tempat kejadian perkara. Pesan tersebut hanya terdiri dari angka dan simbol. Apa artinya?",
+        "solutionID": "Pesan kode tersebut adalah tanggal dan waktu terjadinya kejahatan. Pelaku menggunakan kode khusus untuk menandai setiap kejahatannya.",
+        "titleEN": "Code Message",
+        "questionEN": "A code message was found at the crime scene. The message consisted only of numbers and symbols. What does it mean?",
+        "solutionEN": "The code message is the date and time of the crime. The perpetrator used a special code to mark each of their crimes.",
+        "color": "2"
+    },
+    {
+        "id": "19",
+        "level": "medium",
+        "titleID": "Alibi Palsu",
+        "questionID": "Seorang tersangka memberikan alibi yang kuat, namun detektif yakin ia berbohong. Bagaimana detektif membuktikannya?",
+        "solutionID": "Detektif menemukan bukti bahwa tersangka telah mengubah pengaturan waktu pada perangkat elektroniknya untuk mendukung alibi palsu.",
+        "titleEN": "False Alibi",
+        "questionEN": "A suspect gave a strong alibi, but the detective believed he was lying. How did the detective prove it?",
+        "solutionEN": "The detective found evidence that the suspect had changed the time settings on their electronic devices to support their false alibi.",
+        "color": "3"
+    },
+    {
+        "id": "20",
+        "level": "easy",
+        "titleID": "Korban yang Terkunci",
+        "questionID": "Seorang korban ditemukan tewas terkunci di dalam kamarnya dari dalam. Tidak ada tanda-tanda adanya paksaan. Apa yang terjadi?",
+        "solutionID": "Korban meninggal karena serangan jantung sebelum sempat membuka kunci pintu.",
+        "titleEN": "Locked Victim",
+        "questionEN": "A victim was found dead locked in their room from the inside. There were no signs of forced entry. What happened?",
+        "solutionEN": "The victim died of a heart attack before they could unlock the door.",
+        "color": "4"
+    },
+    {
+        "id": "21",
+        "level": "hard",
+        "titleID": "Lukisan Palsu",
+        "questionID": "Sebuah lukisan terkenal dicuri dari sebuah museum. Namun, lukisan yang ditemukan oleh polisi adalah palsu. Bagaimana bisa?",
+        "solutionID": "Pelaku mengganti lukisan asli dengan lukisan palsu yang dibuat dengan sangat mirip. Perbedaannya hanya bisa dilihat dengan alat khusus.",
+        "titleEN": "Fake Painting",
+        "questionEN": "A famous painting was stolen from a museum. However, the painting found by the police was fake. How could that be?",
+        "solutionEN": "The perpetrator replaced the original painting with a fake painting that was made to look very similar. The difference could only be seen with special equipment.",
+        "color": "0"
+    },
+    {
+        "id": "22",
+        "level": "medium",
+        "titleID": "Pesan Tersembunyi",
+        "questionID": "Sebuah pesan tersembunyi ditemukan di balik sebuah lukisan di rumah korban. Apa artinya?",
+        "solutionID": "Pesan tersebut adalah petunjuk menuju harta karun yang disembunyikan oleh korban. Pelaku membunuh korban untuk mendapatkan harta karun tersebut.",
+        "titleEN": "Hidden Message",
+        "questionEN": "A hidden message was found behind a painting in the victim's house. What does it mean?",
+        "solutionEN": "The message is a clue to a treasure hidden by the victim. The perpetrator killed the victim to get the treasure.",
+        "color": "1"
+    },
+    {
+        "id": "23",
+        "level": "easy",
+        "titleID": "Jejak Kaki Aneh",
+        "questionID": "Jejak kaki aneh ditemukan di tempat kejadian perkara. Jejak kaki tersebut tidak cocok dengan ukuran sepatu siapa pun yang ada di rumah tersebut.",
+        "solutionID": "Jejak kaki tersebut adalah milik hewan peliharaan korban, seperti anjing atau kucing.",
+        "titleEN": "Strange Footprints",
+        "questionEN": "Strange footprints were found at the crime scene. The footprints did not match the size of any shoes in the house.",
+        "solutionEN": "The footprints belonged to the victim's pet, such as a dog or cat.",
+        "color": "2"
+    },
+    {
+        "id": "24",
+        "level": "hard",
+        "titleID": "Racun yang Tak Terlihat",
+        "questionID": "Seorang korban ditemukan tewas karena keracunan. Namun, tidak ada bekas luka atau tanda-tanda masuknya racun ke dalam tubuh korban. Bagaimana bisa?",
+        "solutionID": "Korban diracun melalui udara menggunakan alat penyemprot yang menyembunyikan racun dalam bentuk aerosol.",
+        "titleEN": "Invisible Poison",
+        "questionEN": "A victim was found dead from poisoning. However, there were no wounds or signs of poison entering the victim's body. How could that be?",
+        "solutionEN": "The victim was poisoned through the air using a spray device that concealed the poison in the form of an aerosol.",
+        "color": "3"
+    },
+    {
+        "id": "25",
+        "level": "medium",
+        "titleID": "Alibi yang Sempurna",
+        "questionID": "Seorang tersangka memiliki alibi yang sempurna. Ia berada di tempat yang jauh dari tempat kejadian perkara saat kejahatan terjadi. Bagaimana bisa ia menjadi pelakunya?",
+        "solutionID": "Tersangka menggunakan teknologi untuk mengelabui sistem pengawasan dan membuat seolah-olah ia berada di tempat lain.",
+        "titleEN": "Perfect Alibi",
+        "questionEN": "A suspect had a perfect alibi. He was in a place far from the crime scene when the crime occurred. How could he be the perpetrator?",
+        "solutionEN": "The suspect used technology to deceive the surveillance system and make it appear as if he was in another place.",
+        "color": "4"
+    },
+    {
+        "id": "26",
+        "level": "easy",
+        "titleID": "Kunci yang Patah",
+        "questionID": "Kunci pintu ditemukan patah di dalam rumah yang baru saja dibobol. Siapa pelakunya?",
+        "solutionID": "Pelakunya menggunakan kunci duplikat yang berkualitas buruk sehingga patah saat membuka pintu.",
+        "titleEN": "Broken Key",
+        "questionEN": "A broken key was found inside a house that had just been burglarized. Who is the culprit?",
+        "solutionEN": "The culprit used a poor quality duplicate key that broke when opening the door.",
+        "color": "0"
+    },
+    {
+        "id": "27",
+        "level": "hard",
+        "titleID": "Pesan Tersembunyi di Gambar",
+        "questionID": "Sebuah lukisan tua ditemukan di tempat kejadian perkara. Setelah diteliti, ditemukan pesan tersembunyi di dalam lukisan tersebut. Apa artinya?",
+        "solutionID": "Pesan tersebut adalah petunjuk menuju harta karun yang disembunyikan oleh pelukis.",
+        "titleEN": "Hidden Message in a Painting",
+        "questionEN": "An old painting was found at the crime scene. After examination, a hidden message was found inside the painting. What does it mean?",
+        "solutionEN": "The message is a clue to a treasure hidden by the painter.",
+        "color": "1"
+    },
+    {
+        "id": "28",
+        "level": "medium",
+        "titleID": "Korban yang Terlalu Banyak Makan",
+        "questionID": "Seorang korban ditemukan tewas dengan perut yang sangat buncit. Hasil autopsi menunjukkan bahwa korban meninggal karena terlalu banyak makan. Apa yang sebenarnya terjadi?",
+        "solutionID": "Korban dipaksa makan dalam jumlah yang sangat banyak oleh pelaku sebelum dibunuh.",
+        "titleEN": "Victim Who Ate Too Much",
+        "questionEN": "A victim was found dead with a very swollen stomach. The autopsy results showed that the victim died from eating too much. What really happened?",
+        "solutionEN": "The victim was forced to eat a large amount of food by the perpetrator before being killed.",
+        "color": "2"
+    },
+    {
+        "id": "29",
+        "level": "easy",
+        "titleID": "Jejak Kaki di Lantai Basah",
+        "questionID": "Jejak kaki ditemukan di lantai kamar mandi yang basah. Siapa yang masuk ke kamar mandi setelah korban meninggal?",
+        "solutionID": "Jejak kaki tersebut adalah milik petugas forensik yang pertama kali memasuki tempat kejadian perkara.",
+        "titleEN": "Footprints on Wet Floor",
+        "questionEN": "Footprints were found on the wet floor of the bathroom. Who entered the bathroom after the victim died?",
+        "solutionEN": "The footprints belonged to the forensic officer who was the first to enter the crime scene.",
+        "color": "3"
+    },
+    {
+        "id": "30",
+        "level": "hard",
+        "titleID": "Racun yang Tak Berwarna",
+        "questionID": "Seorang korban ditemukan tewas karena keracunan. Namun, tidak ada bekas minuman atau makanan yang mengandung racun di sekitar korban. Bagaimana bisa?",
+        "solutionID": "Korban diracun melalui udara menggunakan alat penyemprot yang menyembunyikan racun dalam bentuk uap.",
+        "titleEN": "Colorless Poison",
+        "questionEN": "A victim was found dead from poisoning. However, there were no traces of drinks or food containing poison around the victim. How could that be?",
+        "solutionEN": "The victim was poisoned through the air using a spray device that concealed the poison in the form of vapor.",
+        "color": "4"
+    }
+]

@@ -159,8 +159,8 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                   child: _animation.value <= 0.5
                       ? StoryCard(
                           type: 'Question',
-                          title: story.titleId,
-                          content: story.questionId.toString(),
+                          title: story.titleEn,
+                          content: story.questionEn.toString(),
                           image: 'assets/images/object1.png',
                           bgColor: Colors.white,
                           textColor: Colors.black,
@@ -169,8 +169,8 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                           scaleX: -1,
                           child: StoryCard(
                             type: 'Answer',
-                            title: story.titleId.toString(),
-                            content: story.solutionId.toString(),
+                            title: story.titleEn.toString(),
+                            content: story.questionEn.toString(),
                             image: 'assets/images/object1.png',
                             bgColor: Colors.black,
                             textColor: Colors.white,
