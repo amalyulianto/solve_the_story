@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
@@ -6,8 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:solve_the_story/pages/solve_story_page.dart';
 import 'package:solve_the_story/providers/audio_provider.dart';
 import 'package:solve_the_story/styles.dart';
-import 'package:solve_the_story/widgets/button_gradient.dart';
-import 'package:solve_the_story/widgets/important_text.dart';
 import 'package:solve_the_story/widgets/reusable_text.dart';
 
 class HomePage extends StatefulWidget {

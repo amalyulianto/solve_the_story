@@ -16,6 +16,7 @@ class Story {
   String questionEn;
   String solutionEn;
   String color;
+  bool isDone;
 
   Story({
     required this.id,
@@ -27,6 +28,7 @@ class Story {
     required this.questionEn,
     required this.solutionEn,
     required this.color,
+    this.isDone = false,
   });
 
   factory Story.fromJson(Map<String, dynamic> json) => Story(
@@ -39,6 +41,7 @@ class Story {
         questionEn: json["questionEN"],
         solutionEn: json["solutionEN"],
         color: json["color"],
+        isDone: json['isDone'] ?? false,
       );
 
   Map<String, dynamic> toJson() => {
@@ -51,6 +54,7 @@ class Story {
         "questionEN": questionEn,
         "solutionEN": solutionEn,
         "color": color,
+        'isDone': isDone,
       };
 }
 

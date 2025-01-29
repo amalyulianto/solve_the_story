@@ -4,7 +4,7 @@ import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/reusable_text.dart';
 
 class StoryCardButton extends StatelessWidget {
-  StoryCardButton(
+  const StoryCardButton(
       {super.key,
       required this.text,
       required this.subText,
@@ -12,7 +12,8 @@ class StoryCardButton extends StatelessWidget {
       required this.image,
       required this.isLocked,
       required this.isDark,
-      required this.onTap});
+      required this.onTap,
+      required this.isDone});
   final String text;
   final String subText;
   final Color bgColor;
@@ -20,6 +21,7 @@ class StoryCardButton extends StatelessWidget {
   final bool isLocked;
   final bool isDark;
   final VoidCallback onTap;
+  final bool isDone;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class StoryCardButton extends StatelessWidget {
             child: Container(
               height: 250,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(0),
                 color: bgColor,
               ),
               child: Column(
@@ -69,7 +71,7 @@ class StoryCardButton extends StatelessWidget {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: Image.asset(
-                              image,
+                              isDone ? 'assets/images/done.png' : image,
                               width: 60,
                               color: Colors.white,
                             ),
@@ -85,8 +87,8 @@ class StoryCardButton extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(0),
                       ),
                       border: Border.all(color: bgColor, width: 1),
                     ),

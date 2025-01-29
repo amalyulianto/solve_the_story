@@ -1,14 +1,17 @@
-import 'dart:math';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:solve_the_story/models/story_model.dart';
 import 'package:solve_the_story/pages/story_question_page.dart';
 import 'package:solve_the_story/providers/audio_provider.dart';
 import 'package:solve_the_story/providers/id_provider.dart';
 import 'package:solve_the_story/providers/story_provider.dart';
 import 'package:solve_the_story/styles.dart';
+import 'package:solve_the_story/widgets/show_modal_story.dart';
 import 'package:solve_the_story/widgets/story_card_button.dart';
 
 class ChooseStoryPage extends StatelessWidget {
@@ -17,18 +20,25 @@ class ChooseStoryPage extends StatelessWidget {
 
   final List<Color> randomColors = [
     cardBlue,
-
     cardGreen,
     // cardLeaf,
-    cardPink, cardDarkBlue,
-    cardNavy
+    cardPink,
+    cardDarkBlue,
+    cardNavy,
   ];
-  final Random random = Random();
+
+  Future<List<String>> _loadDoneStories() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getStringList('doneStories') ?? [];
+  }
+
+  bool isStoryDone(Story story, List<String> doneStoriesJson) {
+    String storyJson = jsonEncode(story.toJson());
+    return doneStoriesJson.contains(storyJson);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final storyProvider = Provider.of<StoryProvider>(context);
-    final idProvider = Provider.of<IdProvider>(context);
     return Scaffold(
         backgroundColor: black1,
         appBar: AppBar(
@@ -45,7 +55,6 @@ class ChooseStoryPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    print(idProvider.currentId);
                     if (audioProvider.isPlaying) {
                       audioProvider.pauseMusic();
                     } else {
@@ -55,6 +64,20 @@ class ChooseStoryPage extends StatelessWidget {
                 );
               },
             ),
+            IconButton(
+              icon: const Icon(
+                IconlyLight.info_circle,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return ShowModalStory();
+                  },
+                );
+              },
+            )
           ],
           leading: IconButton(
             icon: const Icon(IconlyLight.arrow_left_2),
@@ -72,64 +95,85 @@ class ChooseStoryPage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           // physics: NeverScrollableScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
-              // this is a start of the page's components
-              children: [
-                const SizedBox(
-                  height: 16,
-                ),
-                // this is the first card button
-                Consumer<IdProvider>(builder: (context, idProvider, child) {
-                  return FutureBuilder(
-                      future: storyProvider.fetchAllStories(idProvider),
-                      builder: (context, snapshot) {
-                        return SizedBox(
-                          height: MediaQuery.of(context).size.height - 100,
-                          child: GridView.builder(
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              childAspectRatio: 1 / 1.5,
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 12,
-                              mainAxisSpacing: 0,
-                            ),
-                            itemCount: storyProvider.allStories.length,
-                            itemBuilder: (context, index) {
-                              return StoryCardButton(
-                                image: "assets/images/object1.png",
-                                bgColor: randomColors[int.parse(
-                                    storyProvider.allStories[index].color)],
-                                text: storyProvider.allStories[index].titleId
-                                    .toString(),
-                                subText: '15 Stories, about what yaa.',
-                                isLocked: false,
-                                isDark: true,
-                                onTap: () {
-                                  Get.to(
-                                    () => StoryQuestionPage(
-                                      storyIndex:
-                                          storyProvider.allStories[index],
+          child: FutureBuilder(
+              future: _loadDoneStories(),
+              builder: (context, doneStoriesSnapshot) {
+                if (doneStoriesSnapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (doneStoriesSnapshot.hasError) {
+                  return Center(
+                      child: Text('Error: ${doneStoriesSnapshot.error}'));
+                } else {
+                  final doneStoriesJson = doneStoriesSnapshot.data ?? [];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Column(
+                      // this is a start of the page's components
+                      children: [
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        // this is the first card button
+                        Consumer2<StoryProvider, IdProvider>(builder:
+                            (context, storyProvider, idProvider, child) {
+                          return FutureBuilder(
+                              future: storyProvider.fetchAllStories(idProvider),
+                              builder: (context, snapshot) {
+                                return SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height - 100,
+                                  child: GridView.builder(
+                                    gridDelegate:
+                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                      childAspectRatio: 1 / 1.5,
+                                      crossAxisCount: 2,
+                                      crossAxisSpacing: 12,
+                                      mainAxisSpacing: 0,
                                     ),
-                                    transition: Transition.cupertino,
-                                    duration: const Duration(
-                                      milliseconds: 800,
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                          ),
-                        );
-                      });
-                }),
-                const SizedBox(
-                  height: 48,
-                ),
-              ],
-            ),
-          ),
+                                    itemCount: storyProvider.allStories.length,
+                                    itemBuilder: (context, index) {
+                                      final story =
+                                          storyProvider.allStories[index];
+                                      final done =
+                                          isStoryDone(story, doneStoriesJson);
+                                      return StoryCardButton(
+                                        isDone: done,
+                                        image: "assets/images/object1.png",
+                                        bgColor: randomColors[int.parse(
+                                            storyProvider
+                                                .allStories[index].color)],
+                                        text: storyProvider
+                                            .allStories[index].titleId
+                                            .toString(),
+                                        subText: '15 Stories, about what yaa.',
+                                        isLocked: false,
+                                        isDark: true,
+                                        onTap: () {
+                                          Get.to(
+                                            () => StoryQuestionPage(
+                                              storyIndex: index,
+                                            ),
+                                            transition: Transition.cupertino,
+                                            duration: const Duration(
+                                              milliseconds: 800,
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                );
+                              });
+                        }),
+                        const SizedBox(
+                          height: 48,
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              }),
         ));
   }
 }

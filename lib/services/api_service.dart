@@ -13,7 +13,6 @@ class ApiService {
   ApiService._();
 
   static Future<List<Story>> getAllStories(int i) async {
-    print("SEKARANG JSONNYA $i");
     String data = await rootBundle.loadString('assets/json/story$i.json');
     var result = json.decode(data) as List;
     return result.map((e) => Story.fromJson(e)).toList().cast<Story>();

@@ -29,7 +29,7 @@ class StoryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10), color: bgColor),
+            borderRadius: BorderRadius.circular(0), color: bgColor),
         padding: const EdgeInsets.symmetric(
           horizontal: 8,
           vertical: 12,

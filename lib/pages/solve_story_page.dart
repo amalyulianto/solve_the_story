@@ -83,7 +83,7 @@ class SolveStoryPage extends StatelessWidget {
                 // this is the first card button
                 StoryButton(
                   image: "assets/images/object1.png",
-                  bgColor: red4,
+                  bgColor: cardBlue,
                   text: 'Summer Stories that I want to tell you!',
                   subText: '15 Stories, about what yaa.',
                   isLocked: false,
@@ -100,7 +100,7 @@ class SolveStoryPage extends StatelessWidget {
                 ),
                 StoryButton(
                   image: "assets/images/object1.png",
-                  bgColor: red4,
+                  bgColor: cardPink,
                   text: 'Winter Stories that I want to tell you!',
                   subText: '15 Stories, about what yaa.',
                   isLocked: false,
@@ -112,9 +112,12 @@ class SolveStoryPage extends StatelessWidget {
                         duration: const Duration(milliseconds: 800));
                   },
                 ),
+                const SizedBox(
+                  height: 12,
+                ),
                 StoryButton(
                   image: "assets/images/object1.png",
-                  bgColor: red4,
+                  bgColor: cardDarkBlue,
                   text: 'Summer Stories that I want to tell you!',
                   subText: '15 Stories, about what yaa.',
                   isLocked: false,
