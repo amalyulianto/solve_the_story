@@ -7,7 +7,8 @@
         "solutionID": "Foto yang tersisa adalah sebuah foto negatif yang telah dicetak. Foto-foto lainnya disembunyikan di balik lapisan emulsi pada negatif tersebut.",
         "titleEN": "Missing Photos",
         "questionEN": "A professional photographer found all the photos in his wedding album missing, except for one that looked normal.",
-        "solutionEN": "The remaining photo was a printed negative. The other photos were hidden behind the emulsion layer of the negative."
+        "solutionEN": "The remaining photo was a printed negative. The other photos were hidden behind the emulsion layer of the negative.",
+        "color": "0"
     },
     {
         "id": "2",
@@ -17,7 +18,8 @@
         "solutionID": "Perpustakaan berada di dekat rel kereta api. Getaran dari kereta yang melintas setiap hari menyebabkan buku-buku di rak paling atas bergeser sedikit demi sedikit hingga akhirnya terbalik.",
         "titleEN": "Upside Down Books",
         "questionEN": "All the books in the school library were suddenly turned 180 degrees. There were no signs of damage or water marks.",
-        "solutionEN": "The library was located near the railway tracks. The vibrations from the trains passing by every day caused the books on the top shelves to shift slightly until they eventually turned upside down."
+        "solutionEN": "The library was located near the railway tracks. The vibrations from the trains passing by every day caused the books on the top shelves to shift slightly until they eventually turned upside down.",
+        "color": "1"
     },
     {
         "id": "3",
@@ -27,7 +29,8 @@
         "solutionID": "Jam tangan tersebut memiliki fitur khusus yang secara otomatis menyesuaikan waktu berdasarkan kecepatan gerakan pergelangan tangan. Saat berlari, fitur ini mengaktifkan dan membuat jam tangan menunjukkan waktu yang akurat.",
         "titleEN": "Slow Watch",
         "questionEN": "An athlete's watch always runs 5 minutes slower than the wall clock. However, when he participated in a running race, his watch showed the correct time.",
-        "solutionEN": "The watch had a special feature that automatically adjusted the time based on the movement of the wrist. When running, this feature activated and made the watch show the accurate time."
+        "solutionEN": "The watch had a special feature that automatically adjusted the time based on the movement of the wrist. When running, this feature activated and made the watch show the accurate time.",
+        "color": "2"
     },
     {
         "id": "4",
@@ -37,7 +40,8 @@
         "solutionID": "Kunci mobil tersebut tertinggal di dalam saku jas yang ia gantung di gantungan baju yang sama dengan jas milik asistennya.",
         "titleEN": "Lost Car Key",
         "questionEN": "A businessman lost his car key inside his very large office. He had searched every corner, but it couldn't be found.",
-        "solutionEN": "The car key was left in the pocket of his suit which he hung on the same hanger as his assistant's suit."
+        "solutionEN": "The car key was left in the pocket of his suit which he hung on the same hanger as his assistant's suit.",
+        "color": "3"
     },
     {
         "id": "5",
@@ -47,7 +51,8 @@
         "solutionID": "Lukisan itu sebenarnya adalah sebuah layar proyeksi yang menampilkan karya seni digital yang terus berubah.",
         "titleEN": "Changing Painting",
         "questionEN": "An abstract painting in an art gallery always looks different each time it is viewed. No one can explain the changes.",
-        "solutionEN": "The painting is actually a projection screen displaying a constantly changing digital artwork."
+        "solutionEN": "The painting is actually a projection screen displaying a constantly changing digital artwork.",
+        "color": "4"
     },
     {
         "id": "6",
@@ -57,7 +62,8 @@
         "solutionID": "Jarum jam tersebut terpasang terbalik.",
         "titleEN": "Backward Clock",
         "questionEN": "The wall clock in the children's room always runs backward. The battery has been replaced, but it still runs backward.",
-        "solutionEN": "The clock hands are attached backward."
+        "solutionEN": "The clock hands are attached backward.",
+        "color": "0"
     },
     {
         "id": "7",
@@ -67,7 +73,8 @@
         "solutionID": "Buku tersebut terjepit di antara dua buku yang sama tebalnya sehingga sulit terlihat.",
         "titleEN": "Missing Book",
         "questionEN": "A thick book disappeared from the bookshelf in the library. The bookshelf has been checked repeatedly, but the book could not be found.",
-        "solutionEN": "The book is sandwiched between two equally thick books, making it difficult to see."
+        "solutionEN": "The book is sandwiched between two equally thick books, making it difficult to see.",
+        "color": "1"
     },
     {
         "id": "8",
@@ -77,7 +84,8 @@
         "solutionID": "Di balik foto tersebut terdapat sebuah pesan rahasia yang ditulis dengan tinta yang hanya terlihat jika terkena cahaya pada sudut tertentu.",
         "titleEN": "Blinking Photo",
         "questionEN": "A family photo appears to blink when viewed from a certain angle. There is no damage to the photo.",
-        "solutionEN": "There is a secret message written on the back of the photo with ink that is only visible when exposed to light at a certain angle."
+        "solutionEN": "There is a secret message written on the back of the photo with ink that is only visible when exposed to light at a certain angle.",
+        "color": "2"
     },
     {
         "id": "9",
@@ -87,7 +95,8 @@
         "solutionID": "Koin tersebut terjebak di sela-sela kursi mobil dan tergulung di bawah karpet.",
         "titleEN": "Lost Coin",
         "questionEN": "A child lost a coin in the car. He had searched the entire car, but it could not be found.",
-        "solutionEN": "The coin is stuck in the gap between the car seats and rolled under the carpet."
+        "solutionEN": "The coin is stuck in the gap between the car seats and rolled under the carpet.",
+        "color": "3"
     },
     {
         "id": "10",
@@ -97,7 +106,8 @@
         "solutionID": "Penulis itu meninggal karena alergi terhadap serbuk sari bunga yang ada di vas bunga di mejanya. Ia menggaruk-garuk tangannya hingga terluka dan terkena infeksi yang menyebabkan kematian.",
         "titleEN": "Mysterious Death",
         "questionEN": "A famous writer was found dead in his study. All doors and windows were locked from the inside. There were no signs of forced entry. What happened?",
-        "solutionEN": "The writer died from an allergy to pollen from the flowers in the vase on his desk. He scratched his arm until it was injured and got an infection that caused death."
+        "solutionEN": "The writer died from an allergy to pollen from the flowers in the vase on his desk. He scratched his arm until it was injured and got an infection that caused death.",
+        "color": "4"
     },
     {
         "id": "11",
@@ -107,7 +117,8 @@
         "solutionID": "Pelakunya adalah petugas kebersihan hotel yang memiliki pengetahuan tentang jadwal tamu. Ia memanfaatkan kesempatan saat kamar sedang dibersihkan untuk mengambil perhiasan tersebut.",
         "titleEN": "Missing Jewelry",
         "questionEN": "A socialite's diamond jewelry went missing from her hotel room. All doors and windows were locked. Who is the culprit?",
-        "solutionEN": "The culprit was the hotel maid who had knowledge of the guest's schedule. She took advantage of the opportunity when the room was being cleaned to take the jewelry."
+        "solutionEN": "The culprit was the hotel maid who had knowledge of the guest's schedule. She took advantage of the opportunity when the room was being cleaned to take the jewelry.",
+        "color": "0"
     },
     {
         "id": "12",
@@ -117,7 +128,8 @@
         "solutionID": "Sidik jari tersebut adalah cetakan palsu yang dibuat oleh pelaku untuk mengalihkan perhatian polisi.",
         "titleEN": "False Fingerprints",
         "questionEN": "A detective found fingerprints at the crime scene. However, after examination, the fingerprints did not match anyone on the suspect list.",
-        "solutionEN": "The fingerprints were fake prints made by the perpetrator to divert the police's attention."
+        "solutionEN": "The fingerprints were fake prints made by the perpetrator to divert the police's attention.",
+        "color": "1"
     },
     {
         "id": "13",
@@ -127,7 +139,8 @@
         "solutionID": "Pesan tersebut adalah petunjuk menuju tempat persembunyian barang bukti yang ditulis dengan kode yang hanya bisa dibaca oleh pelaku dan orang kepercayaannya.",
         "titleEN": "Secret Message",
         "questionEN": "A detective found a secret message written in invisible ink at the crime scene. What does the message mean?",
-        "solutionEN": "The message is a clue to the hiding place of the evidence, written in a code that only the perpetrator and their trusted person can read."
+        "solutionEN": "The message is a clue to the hiding place of the evidence, written in a code that only the perpetrator and their trusted person can read.",
+        "color": "2"
     },
     {
         "id": "14",
@@ -137,7 +150,8 @@
         "solutionID": "Korban sebenarnya adalah kembaran dari orang yang tewas. Pelaku membunuh orang yang salah.",
         "titleEN": "The Living Victim",
         "questionEN": "A murder victim was found alive in the hospital. How is that possible?",
-        "solutionEN": "The victim was actually a twin of the person who was killed. The perpetrator killed the wrong person."
+        "solutionEN": "The victim was actually a twin of the person who was killed. The perpetrator killed the wrong person.",
+        "color": "3"
     },
     {
         "id": "15",
@@ -147,6 +161,7 @@
         "solutionID": "Korban meninggal karena keracunan makanan yang dibawa sendiri. Ia memiliki alergi terhadap kacang yang tidak ia sadari telah tercampur dalam makanannya.",
         "titleEN": "Death on the Train",
         "questionEN": "A passenger was found dead inside a moving train. There were no signs of violence. What caused the death?",
-        "solutionEN": "The victim died from food poisoning caused by the food they brought themselves. They had an allergy to peanuts, which they didn't realize had been mixed into their food."
+        "solutionEN": "The victim died from food poisoning caused by the food they brought themselves. They had an allergy to peanuts, which they didn't realize had been mixed into their food.",
+        "color": "4"
     }
 ]

@@ -42,39 +42,40 @@ class StoryCardButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 20,
-                      bottom: 16,
-                      left: 16,
-                      right: 16,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: ReusableText(
-                            text: text,
-                            size: 16,
-                            maxLines: 3,
-                            fontWeight: FontWeight.w900,
-                            textAlign: TextAlign.center,
-                            color: isDark ? Colors.white : Colors.black,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 12,
+                        bottom: 16,
+                        left: 16,
+                        right: 16,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: ReusableText(
+                              text: text,
+                              size: 18,
+                              maxLines: 3,
+                              fontWeight: FontWeight.w900,
+                              textAlign: TextAlign.center,
+                              color: isDark ? Colors.white : Colors.black,
+                            ),
                           ),
-                        ),
-                        // Spacer(),
-                        SizedBox(height: 16),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Image.asset(
-                            image,
-                            width: 60,
-                            color: Colors.white,
+                          Spacer(),
+                          // SizedBox(height: 16),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Image.asset(
+                              image,
+                              width: 60,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Container(

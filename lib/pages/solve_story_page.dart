@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
+import 'package:provider/provider.dart';
 import 'package:solve_the_story/pages/choose_story_page.dart';
+import 'package:solve_the_story/providers/audio_provider.dart';
+import 'package:solve_the_story/providers/id_provider.dart';
 import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/show_modal_story.dart';
 import 'package:solve_the_story/widgets/story_button.dart';
@@ -12,19 +15,32 @@ class SolveStoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final idProvider = Provider.of<IdProvider>(context);
     return Scaffold(
         backgroundColor: black1,
         appBar: AppBar(
           backgroundColor: black1,
           centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(IconlyLight.arrow_left_2),
-            color: white1,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
           actions: [
+            Consumer<AudioProvider>(
+              builder: (context, audioProvider, child) {
+                return IconButton(
+                  icon: Icon(
+                    audioProvider.isPlaying
+                        ? IconlyLight.volume_up
+                        : IconlyLight.volume_off,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    if (audioProvider.isPlaying) {
+                      audioProvider.pauseMusic();
+                    } else {
+                      audioProvider.resumeMusic();
+                    }
+                  },
+                );
+              },
+            ),
             IconButton(
               icon: const Icon(
                 IconlyLight.info_circle,
@@ -41,6 +57,13 @@ class SolveStoryPage extends StatelessWidget {
               },
             )
           ],
+          leading: IconButton(
+            icon: const Icon(IconlyLight.arrow_left_2),
+            color: white1,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           title: Text(
             'Can You Solve\nThe Story?',
             textAlign: TextAlign.center,
@@ -66,6 +89,38 @@ class SolveStoryPage extends StatelessWidget {
                   isLocked: false,
                   isDark: true,
                   onTap: () {
+                    idProvider.setId(1);
+                    Get.to(() => ChooseStoryPage(),
+                        transition: Transition.cupertino,
+                        duration: const Duration(milliseconds: 800));
+                  },
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                StoryButton(
+                  image: "assets/images/object1.png",
+                  bgColor: red4,
+                  text: 'Winter Stories that I want to tell you!',
+                  subText: '15 Stories, about what yaa.',
+                  isLocked: false,
+                  isDark: true,
+                  onTap: () {
+                    idProvider.setId(2);
+                    Get.to(() => ChooseStoryPage(),
+                        transition: Transition.cupertino,
+                        duration: const Duration(milliseconds: 800));
+                  },
+                ),
+                StoryButton(
+                  image: "assets/images/object1.png",
+                  bgColor: red4,
+                  text: 'Summer Stories that I want to tell you!',
+                  subText: '15 Stories, about what yaa.',
+                  isLocked: false,
+                  isDark: true,
+                  onTap: () {
+                    idProvider.setId(3);
                     Get.to(() => ChooseStoryPage(),
                         transition: Transition.cupertino,
                         duration: const Duration(milliseconds: 800));

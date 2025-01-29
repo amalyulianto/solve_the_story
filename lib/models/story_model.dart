@@ -7,14 +7,15 @@ String storyToJson(List<Story> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Story {
-  String? id;
-  Level? level;
-  String? titleId;
-  String? questionId;
-  String? solutionId;
-  String? titleEn;
-  String? questionEn;
-  String? solutionEn;
+  String id;
+  Level level;
+  String titleId;
+  String questionId;
+  String solutionId;
+  String titleEn;
+  String questionEn;
+  String solutionEn;
+  String color;
 
   Story({
     required this.id,
@@ -25,6 +26,7 @@ class Story {
     required this.titleEn,
     required this.questionEn,
     required this.solutionEn,
+    required this.color,
   });
 
   factory Story.fromJson(Map<String, dynamic> json) => Story(
@@ -36,6 +38,7 @@ class Story {
         titleEn: json["titleEN"],
         questionEn: json["questionEN"],
         solutionEn: json["solutionEN"],
+        color: json["color"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -47,6 +50,7 @@ class Story {
         "titleEN": titleEn,
         "questionEN": questionEn,
         "solutionEN": solutionEn,
+        "color": color,
       };
 }
 

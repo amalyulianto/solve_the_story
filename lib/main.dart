@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:solve_the_story/pages/home_page.dart';
+import 'package:solve_the_story/providers/audio_provider.dart';
+import 'package:solve_the_story/providers/id_provider.dart';
 import 'package:solve_the_story/providers/story_provider.dart';
 
 void main() {
@@ -23,6 +25,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => StoryProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => AudioProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => IdProvider(),
+        )
       ],
       child: GetMaterialApp(
         title: 'Game Ngobrol',

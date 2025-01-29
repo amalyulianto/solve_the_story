@@ -1,0 +1,178 @@
+[
+    {
+        "id": "26",
+        "level": "medium",
+        "titleID": "Hujan Emas",
+        "questionID": "Seorang pria kaya raya berjalan-jalan di taman saat hujan turun. Anehnya, ia terlihat sangat senang dan mengumpulkan sesuatu dari tanah.",
+        "solutionID": "Pria itu memiliki kebun bunga tulip yang sangat berharga. Saat hujan, kelopak tulipnya akan mengeluarkan cairan berwarna kuning cerah yang sangat berharga, mirip emas cair.",
+        "titleEN": "Golden Rain",
+        "questionEN": "A wealthy man was walking in his garden during a rainy day. Strangely, he looked very happy and collected something from the ground.",
+        "solutionEN": "The man had a very valuable tulip garden. When it rained, the petals of his tulips would release a bright yellow liquid that was very valuable, similar to liquid gold.",
+        "color": "0"
+    },
+    {
+        "id": "27",
+        "level": "hard",
+        "titleID": "Rahasia di Balik Topeng",
+        "questionID": "Seorang aktor terkenal selalu memakai topeng saat tampil di panggung. Tidak ada yang pernah melihat wajah aslinya. Suatu malam, topengnya terjatuh dan penonton terkejut.",
+        "solutionID": "Aktor itu sebenarnya sangat malu dengan wajahnya karena cacat lahir. Topeng yang ia pakai adalah untuk menyembunyikan cacat tersebut dan membangun citra yang sempurna.",
+        "titleEN": "The Secret Behind the Mask",
+        "questionEN": "A famous actor always wore a mask when performing on stage. No one had ever seen his real face. One night, his mask fell off and the audience was shocked.",
+        "solutionEN": "The actor was actually very ashamed of his face because of a birth defect. The mask he wore was to hide his defect and build a perfect image.",
+        "color": "1"
+    },
+    {
+        "id": "28",
+        "level": "medium",
+        "titleID": "Buku Misterius",
+        "questionID": "Seorang penulis terkenal ditemukan meninggal dunia di perpustakaannya. Di tangannya, ada sebuah buku tua yang halamannya kosong.",
+        "solutionID": "Buku itu adalah buku harian si penulis yang berisi kode rahasia untuk harta karun yang ia sembunyikan. Ia meninggal karena kelelahan mencari harta karun tersebut.",
+        "titleEN": "Mysterious Book",
+        "questionEN": "A famous author was found dead in his library. In his hand, there was an old book with blank pages.",
+        "solutionEN": "The book was the author's diary which contained a secret code for the treasure he had hidden. He died of exhaustion from searching for the treasure.",
+        "color": "3"
+    },
+    {
+        "id": "29",
+        "level": "easy",
+        "titleID": "Jam Dinding Ajaib",
+        "questionID": "Jam dinding di rumah tua itu selalu menunjukkan waktu yang berbeda dari jam lainnya. Namun, setiap kali terjadi peristiwa penting dalam keluarga, jam itu selalu menunjukkan waktu yang tepat.",
+        "solutionID": "Jam dinding itu sebenarnya adalah warisan keluarga yang memiliki kekuatan mistis. Jam itu bisa merasakan emosi dan peristiwa penting dalam keluarga.",
+        "titleEN": "Magical Clock",
+        "questionEN": "The wall clock in the old house always showed a different time from other clocks. However, whenever there was an important event in the family, the clock always showed the correct time.",
+        "solutionEN": "The wall clock was actually a family heirloom that had mystical powers. The clock could feel the emotions and important events in the family.",
+        "color": "4"
+    },
+    {
+        "id": "30",
+        "level": "hard",
+        "titleID": "Lukisan yang Hidup",
+        "questionID": "Seorang pelukis terkenal menciptakan lukisan yang sangat realistis. Suatu malam, lukisan itu menghilang dari galeri.",
+        "solutionID": "Lukisan itu sebenarnya portal menuju dimensi lain. Pelukis itu secara tidak sengaja membuka portal tersebut saat melukis.",
+        "titleEN": "Living Painting",
+        "questionEN": "A famous painter created a very realistic painting. One night, the painting disappeared from the gallery.",
+        "solutionEN": "The painting was actually a portal to another dimension. The painter accidentally opened the portal while painting.",
+        "color": "0"
+    },
+    {
+        "id": "31",
+        "level": "medium",
+        "titleID": "Lukisan Misterius",
+        "questionID": "Seorang pelukis terkenal meninggal dunia. Di studio kerjanya ditemukan lukisan terakhirnya yang sangat aneh. Dalam lukisan itu, terdapat sebuah jam yang menunjukkan waktu 12:00, namun bayangan jarum jam menunjukkan pukul 3:00. Apa rahasia di balik lukisan itu?",
+        "solutionID": "Pelukis tersebut adalah seorang jenius yang menciptakan ilusi optik. Lukisan tersebut dibuat dengan sudut pandang yang unik sehingga menciptakan efek bayangan yang berbeda dengan waktu yang sebenarnya.",
+        "titleEN": "Mysterious Painting",
+        "questionEN": "A famous painter passed away. In his studio, his last painting was found, and it was very strange. In the painting, there was a clock showing 12:00, but the shadow of the hour hand pointed at 3:00. What is the secret behind the painting?",
+        "solutionEN": "The painter was a genius who created optical illusions. The painting was made with a unique perspective that created a shadow effect that was different from the actual time.",
+        "color": "1"
+    },
+    {
+        "id": "32",
+        "level": "hard",
+        "titleID": "Pulau Tersembunyi",
+        "questionID": "Seorang pelaut tua menceritakan tentang sebuah pulau yang hilang. Pulau itu hanya muncul setiap seratus tahun sekali, dan harta karun yang sangat besar tersembunyi di dalamnya. Apa petunjuk untuk menemukan pulau tersebut?",
+        "solutionID": "Pulau tersebut sebenarnya adalah sebuah gunung es raksasa yang hanya muncul di musim dingin yang sangat ekstrem. Petunjuk untuk menemukannya adalah sebuah bintang yang hanya terlihat pada malam tertentu.",
+        "titleEN": "Hidden Island",
+        "questionEN": "An old sailor told a story about a lost island. The island only appeared once every hundred years, and a huge treasure was hidden in it. What is the clue to find the island?",
+        "solutionEN": "The island was actually a giant iceberg that only appeared in the extreme winter. The clue to find it was a star that could only be seen on certain nights.",
+        "color": "3"
+    },
+    {
+        "id": "33",
+        "level": "hard",
+        "titleID": "Lukisan yang Berubah",
+        "questionID": "Setiap malam, lukisan di ruang tamu tampak berbeda. Warna-warna dan detailnya selalu berubah. Apa yang menyebabkan perubahan itu?",
+        "solutionID": "Lukisan itu sebenarnya adalah sebuah layar proyeksi yang menampilkan berbagai karya seni secara acak setiap malam.",
+        "titleEN": "The Changing Painting",
+        "questionEN": "Every night, the painting in the living room looks different. The colors and details always change. What causes the change?",
+        "solutionEN": "The painting is actually a projection screen that displays various works of art randomly every night.",
+        "color": "4"
+    },
+    {
+        "id": "34",
+        "level": "medium",
+        "titleID": "Jam Dinding yang Berbicara",
+        "questionID": "Jam dinding di kamar tidur mengeluarkan suara bisikan yang aneh setiap tengah malam. Apa yang ingin disampaikan oleh jam itu?",
+        "solutionID": "Suara itu adalah rekaman suara pemilik sebelumnya yang sengaja disembunyikan di dalam jam.",
+        "titleEN": "The Talking Clock",
+        "questionEN": "The wall clock in the bedroom makes strange whispers every midnight. What does the clock want to say?",
+        "solutionEN": "The sound is a recording of the previous owner's voice that was intentionally hidden inside the clock.",
+        "color": "0"
+    },
+    {
+        "id": "35",
+        "level": "easy",
+        "titleID": "Buku yang Hilang",
+        "questionID": "Seorang anak menemukan sebuah buku tua di perpustakaan sekolah. Buku itu tidak ada judulnya, dan halaman-halamannya kosong. Apa yang istimewa dari buku itu?",
+        "solutionID": "Buku itu adalah sebuah buku catatan sihir yang bisa menuliskan apa pun yang dipikirkan oleh orang yang memegangnya.",
+        "titleEN": "The Missing Book",
+        "questionEN": "A child found an old book in the school library. The book had no title, and the pages were blank. What is special about the book?",
+        "solutionEN": "The book is a magical notebook that can write down whatever the person holding it thinks.",
+        "color": "1"
+    },
+    {
+        "id": "36",
+        "level": "hard",
+        "titleID": "Foto yang Bernyanyi",
+        "questionID": "Seorang fotografer mengambil foto sebuah pohon tua. Ketika foto itu dicetak, terdengar suara samar-samar seperti lagu dari foto tersebut. Apa yang menyebabkan hal itu?",
+        "solutionID": "Pohon itu ternyata memiliki rongga yang menjadi tempat bersarangnya serangga yang menghasilkan suara seperti musik ketika terkena sinar matahari.",
+        "titleEN": "The Singing Photo",
+        "questionEN": "A photographer took a photo of an old tree. When the photo was printed, a faint sound like a song could be heard from the photo. What caused that?",
+        "solutionEN": "The tree turned out to have a cavity that was home to insects that produced music-like sounds when exposed to sunlight.",
+        "color": "3"
+    },
+    {
+        "id": "37",
+        "level": "medium",
+        "titleID": "Boneka yang Bergerak",
+        "questionID": "Boneka beruang milik seorang anak tiba-tiba bisa bergerak sendiri di malam hari. Apa yang membuat boneka itu hidup?",
+        "solutionID": "Boneka itu sebenarnya adalah robot kecil yang bisa dikendalikan dari jarak jauh.",
+        "titleEN": "The Moving Bear",
+        "questionEN": "A child's teddy bear suddenly could move on its own at night. What made the doll come alive?",
+        "solutionEN": "The doll was actually a small robot that could be controlled remotely.",
+        "color": "4"
+    },
+    {
+        "id": "38",
+        "level": "easy",
+        "titleID": "Kunci yang Berkarat",
+        "questionID": "Sebuah kunci kuno ditemukan di dalam peti harta karun. Kunci itu sudah sangat berkarat, tetapi masih bisa membuka sebuah kotak misterius. Apa yang ada di dalam kotak itu?",
+        "solutionID": "Di dalam kotak itu terdapat sebuah peta menuju harta karun yang sebenarnya.",
+        "titleEN": "The Rusty Key",
+        "questionEN": "An old key was found inside a treasure chest. The key was very rusty, but it could still open a mysterious box. What was inside the box?",
+        "solutionEN": "Inside the box was a map to the real treasure.",
+        "color": "0"
+    },
+    {
+        "id": "39",
+        "level": "hard",
+        "titleID": "Cermin yang Pecah",
+        "questionID": "Seorang wanita melihat ke cermin dan melihat wajahnya yang berbeda setiap hari. Apa yang sebenarnya terjadi?",
+        "solutionID": "Cermin itu adalah sebuah portal ke dimensi lain, dan wajah yang terlihat di cermin adalah wajah dari versi dirinya di dimensi tersebut.",
+        "titleEN": "The Broken Mirror",
+        "questionEN": "A woman looked in the mirror and saw a different face every day. What was really happening?",
+        "solutionEN": "The mirror was a portal to another dimension, and the face seen in the mirror was the face of her version in that dimension.",
+        "color": "1"
+    },
+    {
+        "id": "40",
+        "level": "medium",
+        "titleID": "Jam Pasir yang Terbalik",
+        "questionID": "Jam pasir di ruang tamu tiba-tiba berbalik arah. Pasir mengalir dari bawah ke atas. Apa yang menyebabkan hal itu?",
+        "solutionID": "Jam pasir itu sebenarnya adalah sebuah alat untuk mengukur waktu secara terbalik, yang digunakan untuk ritual tertentu.",
+        "titleEN": "The Upside-Down Hourglass",
+        "questionEN": "The hourglass in the living room suddenly reversed direction. The sand flowed from bottom to top. What caused that?",
+        "solutionEN": "The hourglass was actually a tool for measuring time in reverse, used for certain rituals.",
+        "color": "3"
+    },
+    {
+        "id": "41",
+        "level": "easy",
+        "titleID": "Buku yang Menghilang",
+        "questionID": "Sebuah buku tebal tiba-tiba menghilang dari rak buku. Padahal, tidak ada orang yang menyentuhnya. Kemana buku itu pergi?",
+        "solutionID": "Buku itu mungkin terhisap ke dalam dimensi lain melalui sebuah portal kecil di rak buku.",
+        "titleEN": "The Vanishing Book",
+        "questionEN": "A thick book suddenly disappeared from the bookshelf. Even though no one touched it. Where did the book go?",
+        "solutionEN": "The book might have been sucked into another dimension through a small portal in the bookshelf.",
+        "color": "4"
+    }
+]
