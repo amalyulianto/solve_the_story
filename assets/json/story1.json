@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Kematian di Jendela",
         "questionID": "Seorang pria memutuskan untuk tidur di kamar hotel lantai 20. Malam itu, suara dentuman keras membangunkannya. Keesokan harinya, polisi menemukan pria itu tewas di jalan. Namun, jendela kamarnya terkunci dari dalam.",
         "solutionID": "Pria itu menderita sleepwalking (berjalan sambil tidur). Suara dentuman keras adalah suara petir yang membangunkannya saat dia berada di ambang jendela. Dalam kebingungan, dia terpeleset dan jatuh. Jendela yang terkunci dari dalam adalah bukti bahwa dia tidak melompat dengan sengaja.",
@@ -12,7 +12,7 @@
     },
     {
         "id": "2",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Misteri di Lift",
         "questionID": "Seorang pria ditemukan tewas di dalam lift sebuah gedung pencakar langit. Tidak ada saksi mata, namun tombol darurat lift ditekan.",
         "solutionID": "Pria itu adalah teknisi lift yang terjebak mekanisme lift. Tombol darurat tertekan saat dia mencoba menyelamatkan diri.",
@@ -23,7 +23,7 @@
     },
     {
         "id": "3",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Tamu Tak Terlihat",
         "questionID": "Seorang wanita mendengar ketukan tengah malam. Ketika membuka pintu, tak ada siapa pun. Pagi hari, ditemukan jejak kaki basah di pintu belakang.",
         "solutionID": "Pencuri mengetuk pintu depan untuk mengalihkan perhatian sebelum kabur ke arah pintu belakang.",
@@ -34,7 +34,7 @@
     },
     {
         "id": "4",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Darah di Tangan",
         "questionID": "Seorang pria berlari ke polisi dengan tangan berlumuran darah, mengatakan dia menemukan mayat di hutan.",
         "solutionID": "Pria itu menemukan lokasi kecelakaan pesawat kecil. Darah berasal dari usahanya memeriksa korban kecelakaan.",
@@ -45,7 +45,7 @@
     },
     {
         "id": "5",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Lilin Terakhir",
         "questionID": "Di pesta ulang tahun, lilin terakhir di kue terus menyala meskipun ditiup banyak orang.",
         "solutionID": "Lilin itu adalah lilin ajaib yang menyala kembali setelah ditiup.",
@@ -56,7 +56,7 @@
     },
     {
         "id": "6",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Bayangan di Foto",
         "questionID": "Fotografer melihat bayangan aneh di latar belakang semua foto yang diambil di gedung tua.",
         "solutionID": "Bayangan itu adalah refleksi dirinya sendiri pada kaca besar yang memantulkan cahaya.",
@@ -67,7 +67,7 @@
     },
     {
         "id": "7",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Hilang di Padang Salju",
         "questionID": "Seorang pendaki ditemukan tewas di padang salju tanpa jejak kaki di sekitarnya.",
         "solutionID": "Pendaki itu tertimbun longsoran salju yang menutupi jejak kakinya sebelum mati kedinginan.",
@@ -78,7 +78,7 @@
     },
     {
         "id": "8",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Minuman Mematikan",
         "questionID": "Dua orang minum koktail yang sama. Satu orang meninggal, sementara yang lain baik-baik saja.",
         "solutionID": "Racun ada di es yang mencair. Yang meninggal meminum setelah es mencair, sementara yang selamat meminum lebih cepat.",
@@ -89,7 +89,7 @@
     },
     {
         "id": "9",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Tulang di Perapian",
         "questionID": "Arkeolog menemukan tulang manusia di perapian rumah kosong puluhan tahun.",
         "solutionID": "Tulang itu sisa jenazah yang dibakar pemilik sebelumnya untuk menyembunyikan bukti.",
@@ -100,7 +100,7 @@
     },
     {
         "id": "10",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Lukisan yang Mengintip",
         "questionID": "Tamu merasa diawasi oleh mata pada lukisan di kamar tamu sebuah rumah besar.",
         "solutionID": "Lukisan itu memiliki lubang kecil pada mata yang digunakan untuk mengintip tamu.",
@@ -111,7 +111,7 @@
     },
     {
         "id": "11",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Jam yang Hilang",
         "questionID": "Seorang pria mendengar detak jam, tetapi tidak ada jam di ruangan itu.",
         "solutionID": "Detak itu berasal dari jam tersembunyi di dinding, digunakan penghuni lama untuk menyimpan barang berharga.",
@@ -122,7 +122,7 @@
     },
     {
         "id": "12",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Pesan di Cermin",
         "questionID": "Setiap pagi, seorang wanita melihat tulisan di cermin kamar mandi yang tidak pernah dia tulis.",
         "solutionID": "Tulisan itu berasal dari uap yang menempel di cermin, mengungkapkan pesan yang ditulis penghuni sebelumnya menggunakan minyak.",
@@ -133,7 +133,7 @@
     },
     {
         "id": "13",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Jam yang Berhenti",
         "questionID": "Semua jam di sebuah rumah besar berhenti di pukul 3:15.",
         "solutionID": "Jam-jam itu berhenti karena korsleting listrik yang terjadi saat badai menghantam rumah tepat pada pukul tersebut.",
@@ -144,7 +144,7 @@
     },
     {
         "id": "14",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Pintu yang Terkunci",
         "questionID": "Seorang pria ditemukan tewas di dalam kamar terkunci. Tidak ada jendela terbuka atau pintu lain.",
         "solutionID": "Pria itu meninggal akibat gas beracun yang bocor di kamar tersebut. Tidak ada tanda kerusakan karena gas tidak meninggalkan jejak fisik.",
@@ -155,7 +155,7 @@
     },
     {
         "id": "15",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Bayangan di Tembok",
         "questionID": "Bayangan seseorang terlihat di dinding, namun tidak ada orang di sana.",
         "solutionID": "Bayangan itu berasal dari patung yang berbentuk seperti manusia yang diterangi cahaya.",
@@ -166,7 +166,7 @@
     },
     {
         "id": "16",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Suara dari Bawah Tanah",
         "questionID": "Setiap malam terdengar suara langkah kaki dari bawah tanah sebuah rumah kosong.",
         "solutionID": "Suara itu berasal dari tikus yang berlarian di pipa bawah tanah rumah tersebut.",
@@ -177,7 +177,7 @@
     },
     {
         "id": "17",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Minuman yang Berasap",
         "questionID": "Minuman di sebuah kafe tampak mengeluarkan asap, membuat pengunjung ketakutan.",
         "solutionID": "Asap itu berasal dari es kering yang bereaksi dengan udara, menciptakan efek dramatis.",
@@ -188,7 +188,7 @@
     },
     {
         "id": "18",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Warisan yang Hilang",
         "questionID": "Seorang pewaris kaya kehilangan semua uangnya setelah menerima surat wasiat.",
         "solutionID": "Pewaris tersebut tidak menyadari bahwa ia juga mewarisi hutang besar dari kerabatnya, yang menyebabkan kebangkrutan.",
@@ -199,7 +199,7 @@
     },
     {
         "id": "19",
-        "level": "Easy",
+        "level": "easy",
         "titleID": "Aroma di Malam Hari",
         "questionID": "Setiap malam, aroma wangi semerbak tercium di lorong sebuah apartemen.",
         "solutionID": "Aroma itu berasal dari bunga melati yang ditanam tetangga dekat lorong tersebut.",
@@ -210,7 +210,7 @@
     },
     {
         "id": "20",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Cahaya di Puncak Bukit",
         "questionID": "Pendaki melihat cahaya berkedip-kedip di puncak bukit pada malam hari.",
         "solutionID": "Cahaya itu berasal dari drone yang digunakan untuk merekam pemandangan malam.",
@@ -221,7 +221,7 @@
     },
     {
         "id": "21",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Perahu di Tengah Padang",
         "questionID": "Sebuah perahu ditemukan di tengah padang rumput tanpa sungai atau laut di dekatnya.",
         "solutionID": "Perahu itu dibawa ke lokasi oleh tornado besar yang menyeretnya jauh dari sumber air.",
@@ -232,7 +232,7 @@
     },
     {
         "id": "22",
-        "level": "Hard",
+        "level": "hard",
         "titleID": "Pintu yang Salah",
         "questionID": "Seorang penjaga harus memilih pintu yang akan dibuka, tetapi salah satu pintu akan menutupinya dengan kegelapan abadi.",
         "solutionID": "Semua pintu memiliki penghalang, tetapi satu pintu tidak terlihat oleh siapa pun yang melaluinya—karena hanya bisa terlihat oleh mereka yang jujur.",
@@ -243,7 +243,7 @@
     },
     {
         "id": "23",
-        "level": "Medium",
+        "level": "medium",
         "titleID": "Peta yang Menipu",
         "questionID": "Seorang petualang menggunakan peta tua untuk menemukan harta karun, tetapi setiap petunjuk yang diberikan membuat mereka kembali ke tempat awal.",
         "solutionID": "Peta tersebut tidak memandu mereka ke harta karun, tetapi mengarahkan mereka ke kenyataan bahwa harta sebenarnya ada dalam perjalanan, bukan di akhir.",

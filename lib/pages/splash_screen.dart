@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _navigateToHome() async {
     await Future.delayed(Duration(seconds: 3), () {});
-    Get.to(() => HomePage());
+    Get.offAll(() => HomePage());
   }
 
   @override
