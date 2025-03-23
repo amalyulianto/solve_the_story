@@ -106,6 +106,7 @@ class ChooseStoryPage extends StatelessWidget {
                       child: Text('Error: ${doneStoriesSnapshot.error}'));
                 } else {
                   final doneStoriesJson = doneStoriesSnapshot.data ?? [];
+
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Column(
@@ -135,7 +136,9 @@ class ChooseStoryPage extends StatelessWidget {
                                         i < storyProvider.allStories.length;
                                         i++)
                                       StoryCardButton(
-                                        isDone: true,
+                                        isDone: isStoryDone(
+                                            storyProvider.allStories[i],
+                                            doneStoriesJson),
                                         image: "assets/images/object1.png",
                                         bgColor: randomColors[int.parse(
                                             storyProvider.allStories[i].color)],
