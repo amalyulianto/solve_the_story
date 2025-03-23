@@ -170,7 +170,7 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                           child: StoryCard(
                             type: 'Answer',
                             title: story.titleEn.toString(),
-                            content: story.questionEn.toString(),
+                            content: story.solutionEn.toString(),
                             image: 'assets/images/object1.png',
                             bgColor: Colors.black,
                             textColor: Colors.white,
