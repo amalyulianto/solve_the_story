@@ -26,94 +26,94 @@ class StoryCardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      customBorder:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       onTap: onTap,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Opacity(
-            opacity: isLocked ? 0.4 : 1.0,
-            child: Container(
-              height: 250,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(0),
-                color: bgColor,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 12,
-                        bottom: 16,
-                        left: 16,
-                        right: 16,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: ReusableText(
-                              text: text,
-                              size: 18,
-                              maxLines: 3,
-                              fontWeight: FontWeight.w900,
-                              textAlign: TextAlign.center,
-                              color: isDark ? Colors.white : Colors.black,
+      child: SizedBox(
+        height: 250,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Opacity(
+              opacity: isLocked ? 0.4 : 1.0,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(0),
+                  color: bgColor,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 12,
+                          bottom: 16,
+                          left: 16,
+                          right: 16,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                              child: ReusableText(
+                                text: text,
+                                size: 18,
+                                maxLines: 3,
+                                fontWeight: FontWeight.w900,
+                                textAlign: TextAlign.center,
+                                color: isDark ? Colors.white : Colors.black,
+                              ),
                             ),
-                          ),
-                          Spacer(),
-                          // SizedBox(height: 16),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: Image.asset(
-                              isDone ? 'assets/images/done.png' : image,
-                              width: 60,
-                              color: Colors.white,
+                            Spacer(),
+                            // SizedBox(height: 16),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: Image.asset(
+                                isDone ? 'assets/images/done.png' : image,
+                                width: 60,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    padding:
-                        EdgeInsets.only(top: 4, bottom: 8, left: 8, right: 8),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0),
-                        bottomRight: Radius.circular(0),
+                    Container(
+                      padding:
+                          EdgeInsets.only(top: 4, bottom: 8, left: 8, right: 8),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(0),
+                        ),
+                        border: Border.all(color: bgColor, width: 1),
                       ),
-                      border: Border.all(color: bgColor, width: 1),
+                      child: Text(
+                        "Summer Stories",
+                        textAlign: TextAlign.right,
+                        style: onlyText.copyWith(),
+                      ),
                     ),
-                    child: Text(
-                      "Summer Stories",
-                      textAlign: TextAlign.right,
-                      style: onlyText.copyWith(),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          isLocked
-              ? Center(
-                  child: Icon(
-                    IconlyBold.lock,
-                    color: white1,
-                    size: 50,
+            isLocked
+                ? Center(
+                    child: Icon(
+                      IconlyBold.lock,
+                      color: white1,
+                      size: 50,
+                    ),
+                  )
+                : const SizedBox(
+                    width: 0,
                   ),
-                )
-              : const SizedBox(
-                  width: 0,
-                ),
-        ],
+          ],
+        ),
       ),
     );
   }

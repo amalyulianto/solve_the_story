@@ -203,7 +203,7 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                         side: BorderSide(color: Colors.white, width: 1.5)),
                   ),
                   onPressed: () async {
-                    print("statusnya adalah $isDone");
+                    // print("statusnya adalah $isDone");
                     audioPlayer.play(
                       AssetSource('audios/beep.mp3'),
                     );

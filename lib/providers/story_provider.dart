@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:solve_the_story/services/api_service.dart';
 import 'package:solve_the_story/models/story_model.dart';
-import 'package:solve_the_story/providers/id_provider.dart';
 
 class StoryProvider extends ChangeNotifier {
   // StoryProvider() {

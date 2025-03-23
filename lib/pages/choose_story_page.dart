@@ -93,87 +93,86 @@ class ChooseStoryPage extends StatelessWidget {
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
           ),
         ),
-        body: SingleChildScrollView(
-          // physics: NeverScrollableScrollPhysics(),
-          child: FutureBuilder(
-              future: _loadDoneStories(),
-              builder: (context, doneStoriesSnapshot) {
-                if (doneStoriesSnapshot.connectionState ==
-                    ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
-                } else if (doneStoriesSnapshot.hasError) {
-                  return Center(
-                      child: Text('Error: ${doneStoriesSnapshot.error}'));
-                } else {
-                  final doneStoriesJson = doneStoriesSnapshot.data ?? [];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Column(
-                      // this is a start of the page's components
-                      children: [
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        // this is the first card button
-                        Consumer2<StoryProvider, IdProvider>(builder:
-                            (context, storyProvider, idProvider, child) {
-                          return FutureBuilder(
-                              future: storyProvider
-                                  .fetchAllStories(idProvider.currentId),
-                              builder: (context, snapshot) {
-                                return SizedBox(
-                                  height: MediaQuery.of(context).size.height,
-                                  child: GridView.builder(
-                                    gridDelegate:
-                                        SliverGridDelegateWithFixedCrossAxisCount(
-                                      childAspectRatio: 1 / 1.5,
-                                      crossAxisCount: 2,
-                                      crossAxisSpacing: 8,
-                                      mainAxisSpacing: 0,
-                                    ),
-                                    itemCount: storyProvider.allStories.length,
-                                    itemBuilder: (context, index) {
-                                      final story =
-                                          storyProvider.allStories[index];
-                                      final done =
-                                          isStoryDone(story, doneStoriesJson);
-                                      return StoryCardButton(
-                                        isDone: done,
-                                        image: "assets/images/object1.png",
-                                        bgColor: randomColors[int.parse(
-                                            storyProvider
-                                                .allStories[index].color)],
-                                        text: storyProvider
-                                            .allStories[index].titleEn
-                                            .toString(),
-                                        subText: '15 Stories, about what yaa.',
-                                        isLocked: false,
-                                        isDark: true,
-                                        onTap: () {
-                                          Get.to(
-                                            () => StoryQuestionPage(
-                                              storyIndex: index,
-                                            ),
-                                            transition: Transition.cupertino,
-                                            duration: const Duration(
-                                              milliseconds: 800,
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    },
+        body: FutureBuilder(
+            future: _loadDoneStories(),
+            builder: (context, doneStoriesSnapshot) {
+              if (doneStoriesSnapshot.connectionState ==
+                  ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              } else if (doneStoriesSnapshot.hasError) {
+                return Center(
+                    child: Text('Error: ${doneStoriesSnapshot.error}'));
+              } else {
+                final doneStoriesJson = doneStoriesSnapshot.data ?? [];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Column(
+                    // this is a start of the page's components
+                    children: [
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      // this is the first card button
+                      Consumer2<StoryProvider, IdProvider>(
+                          builder: (context, storyProvider, idProvider, child) {
+                        return FutureBuilder(
+                            future: storyProvider
+                                .fetchAllStories(idProvider.currentId),
+                            builder: (context, snapshot) {
+                              return SizedBox(
+                                height: 250,
+                                child: GridView.builder(
+                                  padding: EdgeInsets.all(8),
+                                  shrinkWrap: true,
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                    childAspectRatio: 1 / 1,
+                                    crossAxisCount: 2,
+                                    // crossAxisSpacing: 8,
+                                    mainAxisSpacing: 4,
                                   ),
-                                );
-                              });
-                        }),
-                        const SizedBox(
-                          height: 48,
-                        ),
-                      ],
-                    ),
-                  );
-                }
-              }),
-        ));
+                                  itemCount: storyProvider.allStories.length,
+                                  itemBuilder: (context, index) {
+                                    final story =
+                                        storyProvider.allStories[index];
+                                    final done =
+                                        isStoryDone(story, doneStoriesJson);
+                                    return StoryCardButton(
+                                      isDone: done,
+                                      image: "assets/images/object1.png",
+                                      bgColor: randomColors[int.parse(
+                                          storyProvider
+                                              .allStories[index].color)],
+                                      text: storyProvider
+                                          .allStories[index].titleEn
+                                          .toString(),
+                                      subText: '15 Stories, about what yaa.',
+                                      isLocked: false,
+                                      isDark: true,
+                                      onTap: () {
+                                        Get.to(
+                                          () => StoryQuestionPage(
+                                            storyIndex: index,
+                                          ),
+                                          transition: Transition.cupertino,
+                                          duration: const Duration(
+                                            milliseconds: 800,
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                ),
+                              );
+                            });
+                      }),
+                      const SizedBox(
+                        height: 48,
+                      ),
+                    ],
+                  ),
+                );
+              }
+            }));
   }
 }

@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     WidgetsBinding.instance.addObserver(this);
     final audioProvider = Provider.of<AudioProvider>(context, listen: false);
     audioProvider.dispose();
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black54,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,

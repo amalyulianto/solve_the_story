@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
-import 'package:solve_the_story/pages/home_page.dart';
 import 'package:solve_the_story/pages/splash_screen.dart';
 import 'package:solve_the_story/providers/audio_provider.dart';
 import 'package:solve_the_story/providers/id_provider.dart';
@@ -35,17 +34,11 @@ class MyApp extends StatelessWidget {
       ],
       child: GetMaterialApp(
         title: 'Game Ngobrol',
-
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        // routes: {
-        //   HomePage.route: (context) => const HomePage(),
-        //   SolveStoryPage.route: (context) =>  SolveStoryPage(),
-        //   ChooseStoryPage.route: (context) => const ChooseStoryPage(),
-        // },
         home: SplashScreen(),
       ),
     );

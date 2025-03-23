@@ -98,7 +98,7 @@ class SolveStoryPage extends StatelessWidget {
                   height: 12,
                 ),
                 StoryButton(
-                  bgColor: cardPink,
+                  bgColor: cardBlue,
                   text: 'Normal Deck 2',
                   subText: '15 Stories',
                   isLocked: false,
@@ -114,7 +114,7 @@ class SolveStoryPage extends StatelessWidget {
                   height: 12,
                 ),
                 StoryButton(
-                  bgColor: cardDarkBlue,
+                  bgColor: cardBlue,
                   text: 'Detective Deck 1',
                   subText: '15 Stories - Detective Mode!',
                   isLocked: false,
