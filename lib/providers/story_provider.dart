@@ -13,7 +13,7 @@ class StoryProvider extends ChangeNotifier {
   Future<void> fetchAllStories(int id) async {
     try {
       allStories = await ApiService.getAllStories(id);
-      _loadDoneStories();
+      await _loadDoneStories();
       notifyListeners();
     } catch (error) {
       errorMessage = 'Error fetching stories: $error';

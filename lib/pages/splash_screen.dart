@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(Duration(seconds: 3), () {});
+    await Future.delayed(Duration(seconds: 2), () {});
     Get.offAll(() => HomePage());
   }
 
@@ -30,13 +30,12 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: Image.asset(
-                    'assets/images/negatiftech.png')), // Your logo here
-            SizedBox(height: 20),
-            CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            ),
+              padding: EdgeInsets.symmetric(horizontal: 48),
+              child: Image.asset(
+                'assets/images/logo_alapakadala.png',
+                color: Colors.white,
+              ),
+            ), // Your logo here
           ],
         ),
       ),

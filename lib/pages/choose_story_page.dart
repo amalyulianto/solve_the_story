@@ -15,10 +15,15 @@ import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/show_modal_story.dart';
 import 'package:solve_the_story/widgets/story_card_button.dart';
 
-class ChooseStoryPage extends StatelessWidget {
-  ChooseStoryPage({super.key});
+class ChooseStoryPage extends StatefulWidget {
+  const ChooseStoryPage({super.key});
   static String route = '/story/choose_story';
 
+  @override
+  State<ChooseStoryPage> createState() => _ChooseStoryPageState();
+}
+
+class _ChooseStoryPageState extends State<ChooseStoryPage> {
   final List<Color> randomColors = [
     cardBlue,
     cardGreen,
@@ -28,14 +33,34 @@ class ChooseStoryPage extends StatelessWidget {
     cardNavy,
   ];
 
+  late Future<void> _fetchStoriesFuture;
+  late List<String> doneStoriesJson;
+
   Future<List<String>> _loadDoneStories() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getStringList('doneStories') ?? [];
   }
 
-  bool isStoryDone(Story story, List<String> doneStoriesJson) {
+  bool isStoryDone(Story story) {
     String storyJson = jsonEncode(story.toJson());
     return doneStoriesJson.contains(storyJson);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchStoriesFuture = _initializeStories();
+  }
+
+  Future<void> _initializeStories() async {
+    final storyProvider = Provider.of<StoryProvider>(context, listen: false);
+    final idProvider = Provider.of<IdProvider>(context, listen: false);
+
+    // Fetch done stories
+    doneStoriesJson = await _loadDoneStories();
+
+    // Fetch all stories
+    await storyProvider.fetchAllStories(idProvider.currentId);
   }
 
   @override
@@ -95,110 +120,75 @@ class ChooseStoryPage extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
-          child: FutureBuilder(
-              future: _loadDoneStories(),
-              builder: (context, doneStoriesSnapshot) {
-                if (doneStoriesSnapshot.connectionState ==
-                    ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
-                } else if (doneStoriesSnapshot.hasError) {
-                  return Center(
-                      child: Text('Error: ${doneStoriesSnapshot.error}'));
-                } else {
-                  final doneStoriesJson = doneStoriesSnapshot.data ?? [];
-
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Column(
-                      // this is a start of the page's components
-                      children: [
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        // this is the first card button
-                        Consumer2<StoryProvider, IdProvider>(
-                          builder: (context, storyProvider, idProvider, child) {
-                            return FutureBuilder(
-                              future: storyProvider
-                                  .fetchAllStories(idProvider.currentId),
-                              builder: (context, snapshot) {
-                                if (snapshot.connectionState ==
-                                    ConnectionState.waiting) {
-                                  // Show a loading indicator while fetching stories
-                                  return Center(
-                                      child: CircularProgressIndicator());
-                                } else if (snapshot.hasError) {
-                                  // Show an error message if fetching stories fails
-                                  return Center(
-                                    child: Text(
-                                      'Error: ${snapshot.error}',
-                                      style: TextStyle(color: Colors.red),
-                                    ),
-                                  );
-                                } else if (storyProvider.allStories.isEmpty) {
-                                  // Handle the case where no stories are available
-                                  return Center(
-                                    child: Text(
-                                      'No stories available.',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  );
-                                } else {
-                                  // Render the grid once stories are loaded
-                                  return LayoutGrid(
-                                    columnSizes: [1.fr, 1.fr],
-                                    rowSizes: List.generate(
-                                      (storyProvider.allStories.length / 2)
-                                          .ceil(),
-                                      (index) => auto,
-                                    ),
-                                    rowGap: 16,
-                                    columnGap: 16,
-                                    children: [
-                                      for (var i = 0;
-                                          i < storyProvider.allStories.length;
-                                          i++)
-                                        StoryCardButton(
-                                          isDone: isStoryDone(
-                                            storyProvider.allStories[i],
-                                            doneStoriesJson,
-                                          ),
-                                          emoji:
-                                              storyProvider.allStories[i].emoji,
-                                          bgColor: randomColors[int.parse(
-                                              storyProvider
-                                                  .allStories[i].color)],
-                                          text: storyProvider
-                                              .allStories[i].titleEn
-                                              .toString(),
-                                          isLocked: false,
-                                          isDark: true,
-                                          onTap: () {
-                                            Get.to(
-                                              () => StoryQuestionPage(
-                                                storyIndex: i,
-                                              ),
-                                              transition: Transition.cupertino,
-                                              duration: const Duration(
-                                                  milliseconds: 800),
-                                            );
-                                          },
-                                        ),
-                                    ],
-                                  );
-                                }
-                              },
-                            );
-                          },
-                        ),
-                        const SizedBox(
-                          height: 48,
-                        ),
-                      ],
-                    ),
-                  );
-                }
-              }),
+          child: FutureBuilder<void>(
+            future: _fetchStoriesFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                return Center(
+                  child: Text(
+                    'Error: ${snapshot.error}',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                );
+              } else {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Consumer<StoryProvider>(
+                        builder: (context, storyProvider, child) {
+                          return LayoutGrid(
+                            columnSizes: [1.fr, 1.fr],
+                            rowSizes: List.generate(
+                              (storyProvider.allStories.length / 2).ceil(),
+                              (index) => auto,
+                            ),
+                            rowGap: 16,
+                            columnGap: 16,
+                            children: [
+                              for (var i = 0;
+                                  i < storyProvider.allStories.length;
+                                  i++)
+                                StoryCardButton(
+                                  isDone:
+                                      isStoryDone(storyProvider.allStories[i]),
+                                  emoji: storyProvider.allStories[i].emoji,
+                                  bgColor: randomColors[int.parse(
+                                      storyProvider.allStories[i].color)],
+                                  text: storyProvider.allStories[i].titleEn
+                                      .toString(),
+                                  isLocked: false,
+                                  isDark: true,
+                                  onTap: () {
+                                    Get.to(
+                                      () => StoryQuestionPage(
+                                        storyIndex: i,
+                                      ),
+                                      transition: Transition.cupertino,
+                                      duration: const Duration(
+                                        milliseconds: 800,
+                                      ),
+                                    );
+                                  },
+                                )
+                            ],
+                          );
+                        },
+                      ),
+                      const SizedBox(
+                        height: 48,
+                      ),
+                    ],
+                  ),
+                );
+              }
+            },
+          ),
         ));
   }
 }
