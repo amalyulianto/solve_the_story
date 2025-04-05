@@ -47,10 +47,18 @@ class StoryCard extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            Image.asset(
-              image,
-              height: 100,
+            ReusableText(
+              text: image,
+              size: 64,
+              fontWeight: FontWeight.normal,
+              color: textColor,
+              textAlign: TextAlign.center,
+              maxLines: 2,
             ),
+            // Image.asset(
+            //   image,
+            //   height: 100,
+            // ),
             const SizedBox(
               height: 12,
             ),

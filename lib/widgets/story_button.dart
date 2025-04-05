@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/reusable_text.dart';
 
 class StoryButton extends StatelessWidget {
@@ -10,10 +11,12 @@ class StoryButton extends StatelessWidget {
       required this.bgColor,
       required this.isLocked,
       required this.isDark,
+      required this.emoji,
       required this.onTap});
   final String text;
   final String subText;
-  final Color bgColor;
+  final String emoji;
+  final LinearGradient bgColor;
   final bool isLocked;
   final bool isDark;
   final VoidCallback onTap;
@@ -26,25 +29,30 @@ class StoryButton extends StatelessWidget {
       ),
       onTap: onTap,
       child: Container(
+        // height: 150,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(0), color: bgColor),
+            borderRadius: BorderRadius.circular(15), gradient: bgColor),
         padding: const EdgeInsets.symmetric(
-          horizontal: 8,
+          horizontal: 16,
           vertical: 12,
         ),
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Flexible(
-              child: SizedBox(
-                width: 12,
-              ),
-            ),
             Expanded(
               flex: 12,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  ReusableText(
+                    text: emoji,
+                    size: 64,
+                    fontWeight: bold,
+                    color: Colors.white,
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
                   ReusableText(
                     text: text,
                     size: 20,

@@ -82,7 +82,8 @@ class SolveStoryPage extends StatelessWidget {
                 ),
                 // this is the first card button
                 StoryButton(
-                  bgColor: cardBlue,
+                  emoji: '🤔❓',
+                  bgColor: blueGradient,
                   text: 'Normal Deck 1',
                   subText: '23 Stories',
                   isLocked: false,
@@ -95,10 +96,11 @@ class SolveStoryPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 16,
                 ),
                 StoryButton(
-                  bgColor: cardBlue,
+                  emoji: '🤔❓',
+                  bgColor: purpleGradient,
                   text: 'Normal Deck 2',
                   subText: '15 Stories',
                   isLocked: false,
@@ -111,10 +113,11 @@ class SolveStoryPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 16,
                 ),
                 StoryButton(
-                  bgColor: cardBlue,
+                  emoji: '🕵️‍♂️',
+                  bgColor: blackGradient,
                   text: 'Detective Deck 1',
                   subText: '15 Stories - Detective Mode!',
                   isLocked: false,
@@ -127,10 +130,11 @@ class SolveStoryPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 16,
                 ),
                 StoryButton(
-                  bgColor: cardDarkBlue,
+                  emoji: '🕵️‍♂️',
+                  bgColor: redGradient,
                   text: 'Detective Deck 2',
                   subText: '15 Stories - Detective Mode!',
                   isLocked: false,
@@ -143,7 +147,7 @@ class SolveStoryPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 16,
                 ),
               ],
             ),

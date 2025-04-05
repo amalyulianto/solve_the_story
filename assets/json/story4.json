@@ -8,7 +8,8 @@
         "titleEN": "Missing Evidence",
         "questionEN": "The main evidence in a murder case disappeared from the evidence storage room at the police station. Who is the culprit?",
         "solutionEN": "The culprit was a forensic officer who had a grudge against the victim. He took advantage of his access to take the evidence.",
-        "color": "0"
+        "color": "1",
+        "emoji": "❓"
     },
     {
         "id": "17",
@@ -19,7 +20,8 @@
         "titleEN": "Fingerprints on the Window",
         "questionEN": "Fingerprints were found on the window of a house that had just been burglarized. However, the fingerprints did not match anyone who lived in the house.",
         "solutionEN": "The fingerprints belonged to a small child who was playing outside and accidentally touched the window.",
-        "color": "1"
+        "color": "2",
+        "emoji": "🪟"
     },
     {
         "id": "18",
@@ -30,7 +32,8 @@
         "titleEN": "Code Message",
         "questionEN": "A code message was found at the crime scene. The message consisted only of numbers and symbols. What does it mean?",
         "solutionEN": "The code message is the date and time of the crime. The perpetrator used a special code to mark each of their crimes.",
-        "color": "2"
+        "color": "4",
+        "emoji": "🔐"
     },
     {
         "id": "19",
@@ -41,7 +44,8 @@
         "titleEN": "False Alibi",
         "questionEN": "A suspect gave a strong alibi, but the detective believed he was lying. How did the detective prove it?",
         "solutionEN": "The detective found evidence that the suspect had changed the time settings on their electronic devices to support their false alibi.",
-        "color": "3"
+        "color": "2",
+        "emoji": "‼️"
     },
     {
         "id": "20",
@@ -52,7 +56,8 @@
         "titleEN": "Locked Victim",
         "questionEN": "A victim was found dead locked in their room from the inside. There were no signs of forced entry. What happened?",
         "solutionEN": "The victim died of a heart attack before they could unlock the door.",
-        "color": "4"
+        "color": "2",
+        "emoji": "✌️"
     },
     {
         "id": "21",
@@ -63,7 +68,8 @@
         "titleEN": "Fake Painting",
         "questionEN": "A famous painting was stolen from a museum. However, the painting found by the police was fake. How could that be?",
         "solutionEN": "The perpetrator replaced the original painting with a fake painting that was made to look very similar. The difference could only be seen with special equipment.",
-        "color": "0"
+        "color": "3",
+        "emoji": "🖼️"
     },
     {
         "id": "22",
@@ -74,7 +80,8 @@
         "titleEN": "Hidden Message",
         "questionEN": "A hidden message was found behind a painting in the victim's house. What does it mean?",
         "solutionEN": "The message is a clue to a treasure hidden by the victim. The perpetrator killed the victim to get the treasure.",
-        "color": "1"
+        "color": "0",
+        "emoji": "🫥"
     },
     {
         "id": "23",
@@ -85,7 +92,8 @@
         "titleEN": "Strange Footprints",
         "questionEN": "Strange footprints were found at the crime scene. The footprints did not match the size of any shoes in the house.",
         "solutionEN": "The footprints belonged to the victim's pet, such as a dog or cat.",
-        "color": "2"
+        "color": "4",
+        "emoji": "🐾"
     },
     {
         "id": "24",
@@ -96,7 +104,8 @@
         "titleEN": "Invisible Poison",
         "questionEN": "A victim was found dead from poisoning. However, there were no wounds or signs of poison entering the victim's body. How could that be?",
         "solutionEN": "The victim was poisoned through the air using a spray device that concealed the poison in the form of an aerosol.",
-        "color": "3"
+        "color": "3",
+        "emoji": "☠️"
     },
     {
         "id": "25",
@@ -107,7 +116,8 @@
         "titleEN": "Perfect Alibi",
         "questionEN": "A suspect had a perfect alibi. He was in a place far from the crime scene when the crime occurred. How could he be the perpetrator?",
         "solutionEN": "The suspect used technology to deceive the surveillance system and make it appear as if he was in another place.",
-        "color": "4"
+        "color": "4",
+        "emoji": "‼️"
     },
     {
         "id": "26",
@@ -118,7 +128,8 @@
         "titleEN": "Broken Key",
         "questionEN": "A broken key was found inside a house that had just been burglarized. Who is the culprit?",
         "solutionEN": "The culprit used a poor quality duplicate key that broke when opening the door.",
-        "color": "0"
+        "color": "0",
+        "emoji": "🗝️"
     },
     {
         "id": "27",
@@ -129,7 +140,8 @@
         "titleEN": "Hidden Message in a Painting",
         "questionEN": "An old painting was found at the crime scene. After examination, a hidden message was found inside the painting. What does it mean?",
         "solutionEN": "The message is a clue to a treasure hidden by the painter.",
-        "color": "1"
+        "color": "1",
+        "emoji": "🖼️"
     },
     {
         "id": "28",
@@ -140,7 +152,8 @@
         "titleEN": "Victim Who Ate Too Much",
         "questionEN": "A victim was found dead with a very swollen stomach. The autopsy results showed that the victim died from eating too much. What really happened?",
         "solutionEN": "The victim was forced to eat a large amount of food by the perpetrator before being killed.",
-        "color": "2"
+        "color": "1",
+        "emoji": "🍉"
     },
     {
         "id": "29",
@@ -151,7 +164,8 @@
         "titleEN": "Footprints on Wet Floor",
         "questionEN": "Footprints were found on the wet floor of the bathroom. Who entered the bathroom after the victim died?",
         "solutionEN": "The footprints belonged to the forensic officer who was the first to enter the crime scene.",
-        "color": "3"
+        "color": "0",
+        "emoji": "👣"
     },
     {
         "id": "30",
@@ -162,6 +176,7 @@
         "titleEN": "Colorless Poison",
         "questionEN": "A victim was found dead from poisoning. However, there were no traces of drinks or food containing poison around the victim. How could that be?",
         "solutionEN": "The victim was poisoned through the air using a spray device that concealed the poison in the form of vapor.",
-        "color": "4"
+        "color": "1",
+        "emoji": "💀"
     }
 ]

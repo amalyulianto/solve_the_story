@@ -6,23 +6,14 @@ import 'package:solve_the_story/services/api_service.dart';
 import 'package:solve_the_story/models/story_model.dart';
 
 class StoryProvider extends ChangeNotifier {
-  // StoryProvider() {
-  //   fetchAllStories();
-  // }
-
   List<Story> allStories = [];
 
-  // List<Story> get allStories => _allStories;
-
-  // set allStories(List<Story> value) {
-  //   _allStories = value;
-  // }
   String errorMessage = '';
 
   Future<void> fetchAllStories(int id) async {
     try {
       allStories = await ApiService.getAllStories(id);
-      await _loadDoneStories();
+      _loadDoneStories();
       notifyListeners();
     } catch (error) {
       errorMessage = 'Error fetching stories: $error';

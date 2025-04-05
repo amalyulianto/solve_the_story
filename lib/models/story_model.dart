@@ -16,6 +16,7 @@ class Story {
   String questionEn;
   String solutionEn;
   String color;
+  String emoji;
   bool isDone;
 
   Story({
@@ -28,6 +29,7 @@ class Story {
     required this.questionEn,
     required this.solutionEn,
     required this.color,
+    required this.emoji,
     this.isDone = false,
   });
 
@@ -41,6 +43,7 @@ class Story {
         questionEn: json["questionEN"],
         solutionEn: json["solutionEN"],
         color: json["color"],
+        emoji: json["emoji"],
         isDone: json['isDone'] ?? false,
       );
 
@@ -54,6 +57,7 @@ class Story {
         "questionEN": questionEn,
         "solutionEN": solutionEn,
         "color": color,
+        "emoji": emoji,
         'isDone': isDone,
       };
 }

@@ -116,54 +116,81 @@ class ChooseStoryPage extends StatelessWidget {
                           height: 16,
                         ),
                         // this is the first card button
-                        Consumer2<StoryProvider, IdProvider>(builder:
-                            (context, storyProvider, idProvider, child) {
-                          return FutureBuilder(
+                        Consumer2<StoryProvider, IdProvider>(
+                          builder: (context, storyProvider, idProvider, child) {
+                            return FutureBuilder(
                               future: storyProvider
                                   .fetchAllStories(idProvider.currentId),
                               builder: (context, snapshot) {
-                                return LayoutGrid(
-                                  columnSizes: [1.fr, 1.fr],
-                                  rowSizes: List.generate(
-                                    (storyProvider.allStories.length / 2)
-                                        .ceil(),
-                                    (index) => auto,
-                                  ),
-                                  rowGap: 16,
-                                  columnGap: 16,
-                                  children: [
-                                    for (var i = 0;
-                                        i < storyProvider.allStories.length;
-                                        i++)
-                                      StoryCardButton(
-                                        isDone: isStoryDone(
+                                if (snapshot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  // Show a loading indicator while fetching stories
+                                  return Center(
+                                      child: CircularProgressIndicator());
+                                } else if (snapshot.hasError) {
+                                  // Show an error message if fetching stories fails
+                                  return Center(
+                                    child: Text(
+                                      'Error: ${snapshot.error}',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                  );
+                                } else if (storyProvider.allStories.isEmpty) {
+                                  // Handle the case where no stories are available
+                                  return Center(
+                                    child: Text(
+                                      'No stories available.',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  );
+                                } else {
+                                  // Render the grid once stories are loaded
+                                  return LayoutGrid(
+                                    columnSizes: [1.fr, 1.fr],
+                                    rowSizes: List.generate(
+                                      (storyProvider.allStories.length / 2)
+                                          .ceil(),
+                                      (index) => auto,
+                                    ),
+                                    rowGap: 16,
+                                    columnGap: 16,
+                                    children: [
+                                      for (var i = 0;
+                                          i < storyProvider.allStories.length;
+                                          i++)
+                                        StoryCardButton(
+                                          isDone: isStoryDone(
                                             storyProvider.allStories[i],
-                                            doneStoriesJson),
-                                        image: "assets/images/object1.png",
-                                        bgColor: randomColors[int.parse(
-                                            storyProvider.allStories[i].color)],
-                                        text: storyProvider
-                                            .allStories[i].titleEn
-                                            .toString(),
-                                        subText: '15 Stories, about what yaa.',
-                                        isLocked: false,
-                                        isDark: true,
-                                        onTap: () {
-                                          Get.to(
-                                            () => StoryQuestionPage(
-                                              storyIndex: i,
-                                            ),
-                                            transition: Transition.cupertino,
-                                            duration: const Duration(
-                                              milliseconds: 800,
-                                            ),
-                                          );
-                                        },
-                                      )
-                                  ],
-                                );
-                              });
-                        }),
+                                            doneStoriesJson,
+                                          ),
+                                          emoji:
+                                              storyProvider.allStories[i].emoji,
+                                          bgColor: randomColors[int.parse(
+                                              storyProvider
+                                                  .allStories[i].color)],
+                                          text: storyProvider
+                                              .allStories[i].titleEn
+                                              .toString(),
+                                          isLocked: false,
+                                          isDark: true,
+                                          onTap: () {
+                                            Get.to(
+                                              () => StoryQuestionPage(
+                                                storyIndex: i,
+                                              ),
+                                              transition: Transition.cupertino,
+                                              duration: const Duration(
+                                                  milliseconds: 800),
+                                            );
+                                          },
+                                        ),
+                                    ],
+                                  );
+                                }
+                              },
+                            );
+                          },
+                        ),
                         const SizedBox(
                           height: 48,
                         ),

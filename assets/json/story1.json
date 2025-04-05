@@ -8,7 +8,8 @@
         "titleEN": "The Locked Window Death",
         "questionEN": "A man decided to sleep in his hotel room on the 20th floor. That night, a loud bang woke him up. The next morning, the police found the man dead on the street. However, his room window was locked from the inside.",
         "solutionEN": "The man was a sleepwalker. The loud bang was thunder that startled him awake while he was standing on the window ledge. Confused, he slipped and fell. The locked window from the inside proves it wasn’t a deliberate jump.",
-        "color": "1"
+        "color": "2",
+        "emoji": "🪟"
     },
     {
         "id": "2",
@@ -19,7 +20,8 @@
         "titleEN": "The Elevator Mystery",
         "questionEN": "A man was found dead in an elevator. The emergency button was pressed, but no one was there.",
         "solutionEN": "The man was an elevator technician trapped in the mechanism. The emergency button was pressed as he tried to save himself.",
-        "color": "2"
+        "color": "4",
+        "emoji": "🛗"
     },
     {
         "id": "3",
@@ -30,7 +32,8 @@
         "titleEN": "The Invisible Guest",
         "questionEN": "A woman heard a knock at midnight but found no one outside. Wet footprints were found leading to the back door the next morning.",
         "solutionEN": "The thief knocked on the front door to distract her before escaping toward the back door.",
-        "color": "3"
+        "color": "1",
+        "emoji": "🧑‍🦳"
     },
     {
         "id": "4",
@@ -41,7 +44,8 @@
         "titleEN": "Blood on His Hands",
         "questionEN": "A man ran to the police with bloodied hands, claiming he found a body in the forest.",
         "solutionEN": "The man stumbled upon a plane crash site. The blood was from checking the victim for signs of life.",
-        "color": "4"
+        "color": "0",
+        "emoji": "🩸"
     },
     {
         "id": "5",
@@ -52,7 +56,8 @@
         "titleEN": "The Last Candle",
         "questionEN": "At a birthday party, the last candle kept relighting despite being blown out by many people.",
         "solutionEN": "The candle was a trick candle designed to relight after being blown out.",
-        "color": "1"
+        "color": "0",
+        "emoji": "🕯️"
     },
     {
         "id": "6",
@@ -63,7 +68,8 @@
         "titleEN": "The Shadow in the Photos",
         "questionEN": "A photographer noticed a strange shadow in all pictures taken at an old building.",
         "solutionEN": "The shadow was his own reflection on large glass windows catching light at specific angles.",
-        "color": "2"
+        "color": "3",
+        "emoji": "📸"
     },
     {
         "id": "7",
@@ -74,7 +80,8 @@
         "titleEN": "Lost in the Snowfield",
         "questionEN": "A hiker was found dead in a snowfield with no footprints around him.",
         "solutionEN": "The hiker was caught in an avalanche that buried his footprints and froze to death.",
-        "color": "3"
+        "color": "1",
+        "emoji": "☃️"
     },
     {
         "id": "8",
@@ -85,7 +92,8 @@
         "titleEN": "The Deadly Drink",
         "questionEN": "Two people drank the same cocktail. One died, while the other was fine.",
         "solutionEN": "The poison was in the ice cubes. The deceased drank after the ice melted, while the survivor drank quickly.",
-        "color": "4"
+        "color": "1",
+        "emoji": "🍸"
     },
     {
         "id": "9",
@@ -96,7 +104,8 @@
         "titleEN": "Bones in the Fireplace",
         "questionEN": "An archaeologist found human bones in the fireplace of a house abandoned for decades.",
         "solutionEN": "The bones were remains of someone burned by the previous owner to hide evidence.",
-        "color": "1"
+        "color": "2",
+        "emoji": "🔥"
     },
     {
         "id": "10",
@@ -107,7 +116,8 @@
         "titleEN": "The Watching Painting",
         "questionEN": "A guest felt watched by the eyes of a painting in the guest room of a large mansion.",
         "solutionEN": "The painting had small holes in the eyes used to spy on guests.",
-        "color": "2"
+        "color": "1",
+        "emoji": "🖼️"
     },
     {
         "id": "11",
@@ -118,7 +128,8 @@
         "titleEN": "The Missing Clock",
         "questionEN": "A man heard a clock ticking, but there was no clock in the room.",
         "solutionEN": "The ticking came from a clock hidden inside the wall, used by the previous owner as a secret stash.",
-        "color": "3"
+        "color": "0",
+        "emoji": "⏱️"
     },
     {
         "id": "12",
@@ -129,7 +140,8 @@
         "titleEN": "Message on the Mirror",
         "questionEN": "Every morning, a woman sees writing on her bathroom mirror that she never wrote.",
         "solutionEN": "The writing was revealed by steam and was written by a previous resident using oil.",
-        "color": "4"
+        "color": "0",
+        "emoji": "🪞"
     },
     {
         "id": "13",
@@ -140,7 +152,8 @@
         "titleEN": "The Stopped Clocks",
         "questionEN": "All clocks in a large house stopped at 3:15.",
         "solutionEN": "The clocks stopped due to an electrical short circuit caused by a storm hitting the house at that exact time.",
-        "color": "1"
+        "color": "3",
+        "emoji": "⌚"
     },
     {
         "id": "14",
@@ -151,7 +164,8 @@
         "titleEN": "The Locked Door",
         "questionEN": "A man was found dead in a locked room. No windows were open, and there was no other door.",
         "solutionEN": "The man died from toxic gas leaking into the room. There were no signs of disturbance because gas leaves no physical trace.",
-        "color": "2"
+        "color": "4",
+        "emoji": "🔒"
     },
     {
         "id": "15",
@@ -162,7 +176,8 @@
         "titleEN": "Shadow on the Wall",
         "questionEN": "A shadow of a person was seen on the wall, but no one was there.",
         "solutionEN": "The shadow came from a statue shaped like a person illuminated by light.",
-        "color": "3"
+        "color": "2",
+        "emoji": "🧱"
     },
     {
         "id": "16",
@@ -173,7 +188,8 @@
         "titleEN": "The Sound from Underground",
         "questionEN": "Every night, footsteps were heard from the underground of an empty house.",
         "solutionEN": "The sound came from rats running through the house’s underground pipes.",
-        "color": "4"
+        "color": "4",
+        "emoji": "🔈"
     },
     {
         "id": "17",
@@ -184,7 +200,8 @@
         "titleEN": "The Smoking Drink",
         "questionEN": "A drink at a café seemed to be emitting smoke, scaring the customers.",
         "solutionEN": "The smoke was from dry ice reacting with the air, creating a dramatic effect.",
-        "color": "1"
+        "color": "3",
+        "emoji": "🍵"
     },
     {
         "id": "18",
@@ -195,7 +212,8 @@
         "titleEN": "The Lost Inheritance",
         "questionEN": "A wealthy heir lost all his money after receiving a will.",
         "solutionEN": "The heir did not realize that he also inherited massive debts from his relative, leading to bankruptcy.",
-        "color": "2"
+        "color": "4",
+        "emoji": "🪙"
     },
     {
         "id": "19",
@@ -206,7 +224,8 @@
         "titleEN": "The Nighttime Fragrance",
         "questionEN": "Every night, a strong fragrance was smelled in the hallway of an apartment.",
         "solutionEN": "The fragrance came from jasmine flowers planted by a neighbor near the hallway.",
-        "color": "3"
+        "color": "4",
+        "emoji": "🦸‍♂️"
     },
     {
         "id": "20",
@@ -217,7 +236,8 @@
         "titleEN": "The Light on the Hilltop",
         "questionEN": "A hiker saw flashing lights on a hilltop at night.",
         "solutionEN": "The lights came from a drone being used to record nighttime scenery.",
-        "color": "4"
+        "color": "2",
+        "emoji": "🚞"
     },
     {
         "id": "21",
@@ -228,7 +248,8 @@
         "titleEN": "A Boat in the Field",
         "questionEN": "A boat was found in the middle of a field with no rivers or seas nearby.",
         "solutionEN": "The boat was carried to the location by a massive tornado, dragging it far from any water source.",
-        "color": "1"
+        "color": "2",
+        "emoji": "⛵"
     },
     {
         "id": "22",
@@ -239,7 +260,8 @@
         "titleEN": "The Wrong Door",
         "questionEN": "A guard faces a decision of choosing a door.",
         "solutionEN": "All doors have obstacles, but one is invisible to those who are not honest.",
-        "color": "2"
+        "color": "3",
+        "emoji": "🚪"
     },
     {
         "id": "23",
@@ -250,6 +272,7 @@
         "titleEN": "The Deceptive Map",
         "questionEN": "An adventurer follows a map to find treasure.",
         "solutionEN": "The map only led them back to the start, revealing the real treasure is the journey itself.",
-        "color": "3"
+        "color": "2",
+        "emoji": "🗺️"
     }
 ]

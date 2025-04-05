@@ -59,21 +59,6 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
     isDone = story.isDone;
   }
 
-  // Future<void> markAsDone(Story story) async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   List<String>? doneStoriesJson = prefs.getStringList('doneStories') ?? [];
-  //   String storyJson = jsonEncode(story.toJson());
-  //   if (!doneStoriesJson.contains(storyJson)) {
-  //     doneStoriesJson.add(storyJson);
-  //     await prefs.setStringList('doneStories', doneStoriesJson);
-  //   }
-  // }
-
-  // bool isStoryDone(Story story, List<String> doneStoriesJson) {
-  //   String storyJson = jsonEncode(story.toJson());
-  //   return doneStoriesJson.contains(storyJson);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,7 +105,6 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                   return ShowModalStory();
                 },
               );
-              // Get.to(() => ShowModalStory());
             },
           )
         ],
@@ -161,7 +145,8 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                           type: 'Question',
                           title: story.titleEn,
                           content: story.questionEn.toString(),
-                          image: 'assets/images/object1.png',
+                          // image: 'assets/images/object1.png',
+                          image: story.emoji,
                           bgColor: Colors.white,
                           textColor: Colors.black,
                         )
@@ -171,7 +156,8 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
                             type: 'Answer',
                             title: story.titleEn.toString(),
                             content: story.solutionEn.toString(),
-                            image: 'assets/images/object1.png',
+                            // image: 'assets/images/object1.png',
+                            image: story.emoji,
                             bgColor: Colors.black,
                             textColor: Colors.white,
                           ),

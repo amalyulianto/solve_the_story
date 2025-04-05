@@ -7,17 +7,15 @@ class StoryCardButton extends StatelessWidget {
   const StoryCardButton(
       {super.key,
       required this.text,
-      required this.subText,
       required this.bgColor,
-      required this.image,
+      required this.emoji,
       required this.isLocked,
       required this.isDark,
       required this.onTap,
       required this.isDone});
   final String text;
-  final String subText;
   final Color bgColor;
-  final String image;
+  final String emoji;
   final bool isLocked;
   final bool isDark;
   final VoidCallback onTap;
@@ -36,8 +34,9 @@ class StoryCardButton extends StatelessWidget {
               opacity: isLocked ? 0.4 : 1.0,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(0),
+                  borderRadius: BorderRadius.circular(10),
                   color: bgColor,
+                  // border: Border.all(color: Colors.white, width: 1),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,36 +64,19 @@ class StoryCardButton extends StatelessWidget {
                                 color: isDark ? Colors.white : Colors.black,
                               ),
                             ),
-                            Spacer(),
-                            // SizedBox(height: 16),
+                            SizedBox(height: 16),
                             Align(
-                              alignment: Alignment.bottomRight,
-                              child: Image.asset(
-                                isDone ? 'assets/images/done.png' : image,
-                                width: 60,
+                              alignment: Alignment.center,
+                              child: ReusableText(
+                                text: emoji,
+                                size: 64,
+                                fontWeight: bold,
                                 color: Colors.white,
+                                textAlign: TextAlign.center,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ),
-                    Container(
-                      padding:
-                          EdgeInsets.only(top: 4, bottom: 8, left: 8, right: 8),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(0),
-                          bottomRight: Radius.circular(0),
-                        ),
-                        border: Border.all(color: bgColor, width: 1),
-                      ),
-                      child: Text(
-                        "Summer Stories",
-                        textAlign: TextAlign.right,
-                        style: onlyText.copyWith(),
                       ),
                     ),
                   ],
@@ -112,6 +94,30 @@ class StoryCardButton extends StatelessWidget {
                 : const SizedBox(
                     width: 0,
                   ),
+            if (isDone)
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Container(
+                  // width: double.infinity,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.only(
+                      // topRight: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                  child: ReusableText(
+                    text: 'Done',
+                    size: 14,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
           ],
         ),
       ),
