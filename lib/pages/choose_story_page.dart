@@ -120,74 +120,81 @@ class _ChooseStoryPageState extends State<ChooseStoryPage> {
           ),
         ),
         body: SingleChildScrollView(
-          child: FutureBuilder<void>(
-            future: _fetchStoriesFuture,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
-              } else if (snapshot.hasError) {
-                return Center(
-                  child: Text(
-                    'Error: ${snapshot.error}',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                );
-              } else {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 16,
+          child: Center(
+            child: Container(
+              constraints: BoxConstraints(
+                maxWidth: 500,
+              ),
+              child: FutureBuilder<void>(
+                future: _fetchStoriesFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        'Error: ${snapshot.error}',
+                        style: TextStyle(color: Colors.red),
                       ),
-                      Consumer<StoryProvider>(
-                        builder: (context, storyProvider, child) {
-                          return LayoutGrid(
-                            columnSizes: [1.fr, 1.fr],
-                            rowSizes: List.generate(
-                              (storyProvider.allStories.length / 2).ceil(),
-                              (index) => auto,
-                            ),
-                            rowGap: 16,
-                            columnGap: 16,
-                            children: [
-                              for (var i = 0;
-                                  i < storyProvider.allStories.length;
-                                  i++)
-                                StoryCardButton(
-                                  isDone:
-                                      isStoryDone(storyProvider.allStories[i]),
-                                  emoji: storyProvider.allStories[i].emoji,
-                                  bgColor: randomColors[int.parse(
-                                      storyProvider.allStories[i].color)],
-                                  text: storyProvider.allStories[i].titleEn
-                                      .toString(),
-                                  isLocked: false,
-                                  isDark: true,
-                                  onTap: () {
-                                    Get.to(
-                                      () => StoryQuestionPage(
-                                        storyIndex: i,
-                                      ),
-                                      transition: Transition.cupertino,
-                                      duration: const Duration(
-                                        milliseconds: 800,
-                                      ),
-                                    );
-                                  },
-                                )
-                            ],
-                          );
-                        },
+                    );
+                  } else {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          Consumer<StoryProvider>(
+                            builder: (context, storyProvider, child) {
+                              return LayoutGrid(
+                                columnSizes: [1.fr, 1.fr],
+                                rowSizes: List.generate(
+                                  (storyProvider.allStories.length / 2).ceil(),
+                                  (index) => auto,
+                                ),
+                                rowGap: 16,
+                                columnGap: 16,
+                                children: [
+                                  for (var i = 0;
+                                      i < storyProvider.allStories.length;
+                                      i++)
+                                    StoryCardButton(
+                                      isDone: isStoryDone(
+                                          storyProvider.allStories[i]),
+                                      emoji: storyProvider.allStories[i].emoji,
+                                      bgColor: randomColors[int.parse(
+                                          storyProvider.allStories[i].color)],
+                                      text: storyProvider.allStories[i].titleEn
+                                          .toString(),
+                                      isLocked: false,
+                                      isDark: true,
+                                      onTap: () {
+                                        Get.to(
+                                          () => StoryQuestionPage(
+                                            storyIndex: i,
+                                          ),
+                                          transition: Transition.cupertino,
+                                          duration: const Duration(
+                                            milliseconds: 800,
+                                          ),
+                                        );
+                                      },
+                                    )
+                                ],
+                              );
+                            },
+                          ),
+                          const SizedBox(
+                            height: 48,
+                          ),
+                        ],
                       ),
-                      const SizedBox(
-                        height: 48,
-                      ),
-                    ],
-                  ),
-                );
-              }
-            },
+                    );
+                  }
+                },
+              ),
+            ),
           ),
         ));
   }

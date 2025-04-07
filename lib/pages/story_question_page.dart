@@ -115,97 +115,104 @@ class _StoryQuestionPageState extends State<StoryQuestionPage>
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
         ),
       ),
-      body: Consumer<StoryProvider>(
-        builder: (context, storyProvider, child) {
-          final story = storyProvider.allStories[widget.storyIndex];
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  if (_status == AnimationStatus.dismissed) {
-                    audioPlayer.play(
-                      AssetSource('audios/paper.mp3'),
-                    );
-                    _controller.forward();
-                  } else {
-                    audioPlayer.play(
-                      AssetSource('audios/paper.mp3'),
-                    );
-                    _controller.reverse();
-                  }
-                },
-                child: Transform(
-                  alignment: FractionalOffset.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.0015)
-                    ..rotateY(pi * _animation.value),
-                  child: _animation.value <= 0.5
-                      ? StoryCard(
-                          type: 'Question',
-                          title: story.titleEn,
-                          content: story.questionEn.toString(),
-                          // image: 'assets/images/object1.png',
-                          image: story.emoji,
-                          bgColor: Colors.white,
-                          textColor: Colors.black,
-                        )
-                      : Transform.scale(
-                          scaleX: -1,
-                          child: StoryCard(
-                            type: 'Answer',
-                            title: story.titleEn.toString(),
-                            content: story.solutionEn.toString(),
-                            // image: 'assets/images/object1.png',
-                            image: story.emoji,
-                            bgColor: Colors.black,
-                            textColor: Colors.white,
-                          ),
-                        ),
-                ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              ReusableText(
-                text: _status == AnimationStatus.dismissed
-                    ? 'Tap the card to see answer!'
-                    : 'Tap to flip back!',
-                size: 14,
-                fontWeight: FontWeight.normal,
-                color: Colors.white,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 48,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: Colors.white, width: 1.5)),
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: 500,
+          ),
+          child: Consumer<StoryProvider>(
+            builder: (context, storyProvider, child) {
+              final story = storyProvider.allStories[widget.storyIndex];
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      if (_status == AnimationStatus.dismissed) {
+                        audioPlayer.play(
+                          AssetSource('audios/paper.mp3'),
+                        );
+                        _controller.forward();
+                      } else {
+                        audioPlayer.play(
+                          AssetSource('audios/paper.mp3'),
+                        );
+                        _controller.reverse();
+                      }
+                    },
+                    child: Transform(
+                      alignment: FractionalOffset.center,
+                      transform: Matrix4.identity()
+                        ..setEntry(3, 2, 0.0015)
+                        ..rotateY(pi * _animation.value),
+                      child: _animation.value <= 0.5
+                          ? StoryCard(
+                              type: 'Question',
+                              title: story.titleEn,
+                              content: story.questionEn.toString(),
+                              // image: 'assets/images/object1.png',
+                              image: story.emoji,
+                              bgColor: Colors.white,
+                              textColor: Colors.black,
+                            )
+                          : Transform.scale(
+                              scaleX: -1,
+                              child: StoryCard(
+                                type: 'Answer',
+                                title: story.titleEn.toString(),
+                                content: story.solutionEn.toString(),
+                                // image: 'assets/images/object1.png',
+                                image: story.emoji,
+                                bgColor: Colors.black,
+                                textColor: Colors.white,
+                              ),
+                            ),
+                    ),
                   ),
-                  onPressed: () async {
-                    // print("statusnya adalah $isDone");
-                    audioPlayer.play(
-                      AssetSource('audios/beep.mp3'),
-                    );
-                    await toggleIsDone(story);
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    isDone ? "Mark as Undone" : "Mark as Done",
-                    style: onlyText.copyWith(
-                        color: Colors.white, fontWeight: bold),
+                  const SizedBox(
+                    height: 4,
                   ),
-                ),
-              ),
-            ],
-          );
-        },
+                  ReusableText(
+                    text: _status == AnimationStatus.dismissed
+                        ? 'Tap the card to see answer!'
+                        : 'Tap to flip back!',
+                    size: 14,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width - 48,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.white, width: 1.5)),
+                      ),
+                      onPressed: () async {
+                        // print("statusnya adalah $isDone");
+                        audioPlayer.play(
+                          AssetSource('audios/beep.mp3'),
+                        );
+                        await toggleIsDone(story);
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        isDone ? "Mark as Undone" : "Mark as Done",
+                        style: onlyText.copyWith(
+                            color: Colors.white, fontWeight: bold),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ),
       ),
     );
   }

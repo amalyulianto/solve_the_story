@@ -8,7 +8,6 @@ class AudioProvider with ChangeNotifier {
 
   AudioProvider() {
     _audioPlayer = AudioPlayer();
-    playMusic();
   }
 
   bool get isPlaying => _isPlaying;

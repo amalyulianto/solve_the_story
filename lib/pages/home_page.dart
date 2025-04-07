@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:solve_the_story/pages/solve_story_page.dart';
+import 'package:solve_the_story/pages/choose_deck_page.dart';
 import 'package:solve_the_story/providers/audio_provider.dart';
 import 'package:solve_the_story/styles.dart';
 import 'package:solve_the_story/widgets/reusable_text.dart';
@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     final audioProvider = Provider.of<AudioProvider>(context, listen: false);
+
     audioProvider.playMusic();
   }
 
@@ -38,7 +39,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     if (state == AppLifecycleState.paused) {
       audioProvider.pauseMusic();
     } else if (state == AppLifecycleState.resumed) {
-      audioProvider.resumeMusic();
+      if (audioProvider.isPlaying) {
+        audioProvider.resumeMusic();
+      }
     }
   }
 
@@ -49,11 +52,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        // title: Text(
-        //   'GAME NGOBROL',
-        //   style: fancyText.copyWith(
-        //       color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
-        // ),
         actions: <Widget>[
           Consumer<AudioProvider>(
             builder: (context, audioProvider, child) {
@@ -83,55 +81,57 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Container(
-          constraints: BoxConstraints(
-            minHeight: MediaQuery.of(context).size.height,
-          ),
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Spacer(),
-              Image.asset('assets/images/logoMark.png'),
-              ReusableText(
-                  text: 'Solve the story!',
-                  size: 28,
-                  fontWeight: bold,
-                  color: white1,
-                  textAlign: TextAlign.center),
-              SizedBox(height: 20), // Spacer(),
-              Center(
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width - 48,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: black1,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(color: Colors.white, width: 1.5))),
-                    onPressed: () {
-                      Get.to(() => SolveStoryPage(),
-                          transition: Transition.cupertino,
-                          duration: const Duration(milliseconds: 800));
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 12),
-                      child: ReusableText(
-                        text: 'Play',
-                        color: Colors.white,
-                        size: 24,
-                        textAlign: TextAlign.center,
-                        fontWeight: bold,
-                        maxLines: 2,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Container(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height,
+              maxWidth: 500,
+            ),
+            child: Column(
+              children: [
+                Spacer(),
+                Image.asset('assets/images/logoMark.png'),
+                ReusableText(
+                    text: 'Solve the story!',
+                    size: 28,
+                    fontWeight: bold,
+                    color: white1,
+                    textAlign: TextAlign.center),
+                SizedBox(height: 20), // Spacer(),
+                Center(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width - 48,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: black1,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              side:
+                                  BorderSide(color: Colors.white, width: 1.5))),
+                      onPressed: () {
+                        Get.to(() => ChooseDeckPage(),
+                            transition: Transition.cupertino,
+                            duration: const Duration(milliseconds: 800));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        child: ReusableText(
+                          text: 'Play',
+                          color: Colors.white,
+                          size: 24,
+                          textAlign: TextAlign.center,
+                          fontWeight: bold,
+                          maxLines: 2,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Spacer(),
-            ],
+                Spacer(),
+              ],
+            ),
           ),
         ),
       ),
