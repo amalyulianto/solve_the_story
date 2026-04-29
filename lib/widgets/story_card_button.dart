@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:solve_the_story/styles.dart';
-import 'package:solve_the_story/widgets/reusable_text.dart';
 
-class StoryCardButton extends StatelessWidget {
-  const StoryCardButton(
-      {super.key,
-      required this.text,
-      required this.bgColor,
-      required this.emoji,
-      required this.isLocked,
-      required this.isDark,
-      required this.onTap,
-      required this.isDone});
+class StoryCardButton extends StatefulWidget {
+  const StoryCardButton({
+    super.key,
+    required this.text,
+    required this.bgColor,
+    required this.emoji,
+    required this.isLocked,
+    required this.isDark,
+    required this.onTap,
+    required this.isDone,
+  });
+
   final String text;
   final Color bgColor;
   final String emoji;
@@ -22,103 +22,135 @@ class StoryCardButton extends StatelessWidget {
   final bool isDone;
 
   @override
+  State<StoryCardButton> createState() => _StoryCardButtonState();
+}
+
+class _StoryCardButtonState extends State<StoryCardButton>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100),
+    );
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 0.95).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: SizedBox(
-        height: 250,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Opacity(
-              opacity: isLocked ? 0.4 : 1.0,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: bgColor,
-                  // border: Border.all(color: Colors.white, width: 1),
+    return GestureDetector(
+      onTapDown: (_) => !widget.isLocked ? _controller.forward() : null,
+      onTapUp: (_) {
+        if (!widget.isLocked) {
+          _controller.reverse();
+          widget.onTap();
+        }
+      },
+      onTapCancel: () => _controller.reverse(),
+      child: ScaleTransition(
+        scale: _scaleAnimation,
+        child: Opacity(
+          opacity: widget.isLocked ? 0.5 : 1.0,
+          child: Container(
+            height: 250,
+            width: double.infinity,
+            margin: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: widget.bgColor,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.1),
+                width: 1,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.2),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          top: 12,
-                          bottom: 16,
-                          left: 16,
-                          right: 16,
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(
+                children: [
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            widget.emoji,
+                            style: const TextStyle(fontSize: 64),
+                          ),
+                          const SizedBox(height: 16),
+                          Text(
+                            widget.text,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color:
+                                  widget.isDark ? Colors.white : Colors.black,
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  if (widget.isLocked)
+                    Center(
+                      child: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.black54,
+                          shape: BoxShape.circle,
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Center(
-                              child: ReusableText(
-                                text: text,
-                                size: 18,
-                                maxLines: 3,
-                                fontWeight: FontWeight.w900,
-                                textAlign: TextAlign.center,
-                                color: isDark ? Colors.white : Colors.black,
-                              ),
-                            ),
-                            SizedBox(height: 16),
-                            Align(
-                              alignment: Alignment.center,
-                              child: ReusableText(
-                                text: emoji,
-                                size: 64,
-                                fontWeight: bold,
-                                color: Colors.white,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
+                        child: const Icon(
+                          IconlyBold.lock,
+                          color: Colors.white,
+                          size: 32,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  if (widget.isDone)
+                    Positioned(
+                      top: 12,
+                      right: 12,
+                      child: Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: const BoxDecoration(
+                          color: Colors.green,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.check,
+                          color: Colors.white,
+                          size: 16,
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
-            isLocked
-                ? Center(
-                    child: Icon(
-                      IconlyBold.lock,
-                      color: white1,
-                      size: 50,
-                    ),
-                  )
-                : const SizedBox(
-                    width: 0,
-                  ),
-            if (isDone)
-              Positioned(
-                bottom: 0,
-                right: 0,
-                child: Container(
-                  // width: double.infinity,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.only(
-                      // topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                    ),
-                  ),
-                  child: ReusableText(
-                    text: 'Done',
-                    size: 14,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-          ],
+          ),
         ),
       ),
     );

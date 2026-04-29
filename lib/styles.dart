@@ -11,34 +11,44 @@ TextStyle textSubtitle =
 
 TextStyle onlyText = GoogleFonts.plusJakartaSans();
 
-TextStyle fancyText = GoogleFonts.plusJakartaSans();
+TextStyle fancyText = GoogleFonts.cinzel(); // More detective-like/classic font
 
-Color blue1 = const Color(0xff0083e3);
-Color blue2 = const Color(0xff23A2FF);
-Color purple1 = const Color(0xff7203FF);
-Color purple2 = const Color(0xff882AFF);
-Color red1 = const Color(0xffF4043E);
-Color red2 = const Color(0xffF57383);
-Color red3 = const Color(0xffFF5267);
-Color red4 = const Color(0xff8E0224);
-Color pink = const Color(0xffFF527C);
-Color green1 = const Color(0xff2CF27B);
-Color black1 = Colors.black;
-Color black2 = const Color(0xff444444);
-Color black3 = const Color(0xff3c3c3c);
-Color white1 = Colors.white;
+// Mysterious Lounge Palette
+Color primaryDark = const Color(0xff1A1A1A); // Deep Charcoal
+Color primaryLight = const Color(0xffF5F5DC); // Cream
+Color accentGold = const Color(0xffD4AF37); // Gold
+Color accentOrange = const Color(0xffCC5500); // Burnt Orange
+Color espresso = const Color(0xff3D2B1F); // Dark Espresso
+Color charcoal = const Color(0xff2F2F2F); // Medium Charcoal
 
-Color cardBlue = const Color(0xff0083e3);
-Color cardLeaf = const Color(0xff5F9F98);
-Color cardPink = const Color(0xffFF527C);
-Color cardDarkBlue = const Color(0xff013255);
-Color cardGreen = const Color(0xff00BFA8);
-Color cardNavy = const Color(0xff0A82A8);
+// Transitional Colors (maintaining for gradient compatibility)
+Color blue1 = const Color(0xff1A3A5A);
+Color purple1 = const Color(0xff3A1A5A);
+Color red1 = const Color(0xff5A1A1A);
 
-LinearGradient blueGradient = LinearGradient(colors: [blue1, blue2]);
-LinearGradient purpleGradient = LinearGradient(colors: [purple1, purple2]);
-LinearGradient redGradient = LinearGradient(colors: [red1, red2]);
-LinearGradient blackGradient = LinearGradient(colors: [black1, black2]);
+LinearGradient mysteriousGradient = LinearGradient(
+  colors: [primaryDark, charcoal],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
+
+LinearGradient midnightTealGradient = LinearGradient(
+  colors: [const Color(0xff004D40), primaryDark],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
+
+LinearGradient terracottaGradient = LinearGradient(
+  colors: [accentOrange, const Color(0xff8B4513)],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
+
+LinearGradient crimsonGradient = LinearGradient(
+  colors: [red1, espresso],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
 
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;

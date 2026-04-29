@@ -8,11 +8,11 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:solve_the_story/models/story_model.dart';
 import 'package:solve_the_story/pages/story_question_page.dart';
-import 'package:solve_the_story/providers/audio_provider.dart';
 import 'package:solve_the_story/providers/id_provider.dart';
 import 'package:solve_the_story/providers/story_provider.dart';
 import 'package:solve_the_story/styles.dart';
-import 'package:solve_the_story/widgets/show_modal_story.dart';
+import 'package:solve_the_story/widgets/mysterious_background.dart';
+import 'package:solve_the_story/widgets/story_app_bar.dart';
 import 'package:solve_the_story/widgets/story_card_button.dart';
 
 class ChooseStoryPage extends StatefulWidget {
@@ -25,12 +25,12 @@ class ChooseStoryPage extends StatefulWidget {
 
 class _ChooseStoryPageState extends State<ChooseStoryPage> {
   final List<Color> randomColors = [
-    cardBlue,
-    cardGreen,
-    // cardLeaf,
-    cardPink,
-    cardDarkBlue,
-    cardNavy,
+    espresso,
+    charcoal,
+    accentOrange.withValues(alpha: 0.8),
+    accentGold.withValues(alpha: 0.8),
+    const Color(0xff4A1A1A),
+    const Color(0xff1A4A4A),
   ];
 
   late Future<void> _fetchStoriesFuture;
@@ -65,137 +65,84 @@ class _ChooseStoryPageState extends State<ChooseStoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: black1,
-        appBar: AppBar(
-          backgroundColor: black1,
-          centerTitle: true,
-          actions: [
-            Consumer<AudioProvider>(
-              builder: (context, audioProvider, child) {
-                return IconButton(
-                  icon: Icon(
-                    audioProvider.isPlaying
-                        ? IconlyLight.volume_up
-                        : IconlyLight.volume_off,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    if (audioProvider.isPlaying) {
-                      audioProvider.pauseMusic();
-                    } else {
-                      audioProvider.resumeMusic();
-                    }
-                  },
-                );
-              },
+    return MysteriousBackground(
+      child: SafeArea(
+        child: Column(
+          children: [
+            StoryAppBar(
+              title: 'CHOOSE STORY',
+              leading: IconButton(
+                icon: Icon(IconlyLight.arrow_left_2, color: primaryLight),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
-            IconButton(
-              icon: const Icon(
-                IconlyLight.info_circle,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return ShowModalStory();
-                  },
-                );
-              },
-            )
-          ],
-          leading: IconButton(
-            icon: const Icon(IconlyLight.arrow_left_2),
-            color: white1,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          title: Text(
-            'Choose your story',
-            textAlign: TextAlign.center,
-            style: fancyText.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
-          ),
-        ),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              constraints: BoxConstraints(
-                maxWidth: 500,
-              ),
+            Expanded(
               child: FutureBuilder<void>(
                 future: _fetchStoriesFuture,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(
+                        child: CircularProgressIndicator(color: Colors.amber));
                   } else if (snapshot.hasError) {
                     return Center(
                       child: Text(
                         'Error: ${snapshot.error}',
-                        style: TextStyle(color: Colors.red),
+                        style: const TextStyle(color: Colors.red),
                       ),
                     );
                   } else {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 16,
+                    return Consumer<StoryProvider>(
+                      builder: (context, storyProvider, child) {
+                        return SingleChildScrollView(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24.0, vertical: 16),
+                          child: LayoutGrid(
+                            columnSizes: [1.fr, 1.fr],
+                            rowSizes: List.generate(
+                              (storyProvider.allStories.length / 2).ceil(),
+                              (index) => 250.px,
+                            ),
+                            rowGap: 16,
+                            columnGap: 16,
+                            children: [
+                              for (var i = 0;
+                                  i < storyProvider.allStories.length;
+                                  i++)
+                                StoryCardButton(
+                                  isDone:
+                                      isStoryDone(storyProvider.allStories[i]),
+                                  emoji: storyProvider.allStories[i].emoji,
+                                  bgColor: randomColors[int.parse(
+                                          storyProvider.allStories[i].color) %
+                                      randomColors.length],
+                                  text: storyProvider.allStories[i].titleEn
+                                      .toString(),
+                                  isLocked: false,
+                                  isDark: true,
+                                  onTap: () {
+                                    Get.to(
+                                      () => StoryQuestionPage(
+                                        storyIndex: i,
+                                      ),
+                                      transition: Transition.zoom,
+                                      duration: const Duration(
+                                        milliseconds: 500,
+                                      ),
+                                    );
+                                  },
+                                )
+                            ],
                           ),
-                          Consumer<StoryProvider>(
-                            builder: (context, storyProvider, child) {
-                              return LayoutGrid(
-                                columnSizes: [1.fr, 1.fr],
-                                rowSizes: List.generate(
-                                  (storyProvider.allStories.length / 2).ceil(),
-                                  (index) => auto,
-                                ),
-                                rowGap: 16,
-                                columnGap: 16,
-                                children: [
-                                  for (var i = 0;
-                                      i < storyProvider.allStories.length;
-                                      i++)
-                                    StoryCardButton(
-                                      isDone: isStoryDone(
-                                          storyProvider.allStories[i]),
-                                      emoji: storyProvider.allStories[i].emoji,
-                                      bgColor: randomColors[int.parse(
-                                          storyProvider.allStories[i].color)],
-                                      text: storyProvider.allStories[i].titleEn
-                                          .toString(),
-                                      isLocked: false,
-                                      isDark: true,
-                                      onTap: () {
-                                        Get.to(
-                                          () => StoryQuestionPage(
-                                            storyIndex: i,
-                                          ),
-                                          transition: Transition.cupertino,
-                                          duration: const Duration(
-                                            milliseconds: 800,
-                                          ),
-                                        );
-                                      },
-                                    )
-                                ],
-                              );
-                            },
-                          ),
-                          const SizedBox(
-                            height: 48,
-                          ),
-                        ],
-                      ),
+                        );
+                      },
                     );
                   }
                 },
               ),
             ),
-          ),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }

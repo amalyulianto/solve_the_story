@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solve_the_story/widgets/reusable_text.dart';
+import 'package:solve_the_story/styles.dart';
 
 class StoryCard extends StatelessWidget {
   const StoryCard({
@@ -23,64 +23,91 @@ class StoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.65,
-      // height: 400,
       margin: const EdgeInsets.only(left: 24, right: 24, top: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      width: MediaQuery.of(context).size.width - 24,
       decoration: BoxDecoration(
         color: bgColor,
-        border: Border.all(color: Colors.white, width: 1.5),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: accentGold.withValues(alpha: 0.5), width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
-      child: RawScrollbar(
-        thumbVisibility: true,
-        child: ListView(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(18),
+        child: Stack(
           children: [
-            ReusableText(
-              text: type,
-              size: 14,
-              fontWeight: FontWeight.normal,
-              color: textColor,
-              textAlign: TextAlign.center,
-              maxLines: 2,
+            // Subtle texture/gradient overlay
+            Positioned.fill(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Colors.white.withValues(alpha: 0.05),
+                      Colors.transparent,
+                    ],
+                  ),
+                ),
+              ),
             ),
-            SizedBox(
-              height: 12,
-            ),
-            ReusableText(
-              text: image,
-              size: 64,
-              fontWeight: FontWeight.normal,
-              color: textColor,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-            ),
-            // Image.asset(
-            //   image,
-            //   height: 100,
-            // ),
-            const SizedBox(
-              height: 12,
-            ),
-            ReusableText(
-              text: title,
-              size: 22,
-              fontWeight: FontWeight.normal,
-              color: textColor,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            SizedBox(
-              child: ReusableText(
-                text: content,
-                size: 20,
-                fontWeight: FontWeight.bold,
-                color: textColor,
-                textAlign: TextAlign.center,
-                maxLines: 30,
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: RawScrollbar(
+                thumbVisibility: true,
+                thickness: 4,
+                radius: const Radius.circular(10),
+                thumbColor: accentGold.withValues(alpha: 0.5),
+                child: ListView(
+                  children: [
+                    Text(
+                      type.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: onlyText.copyWith(
+                        fontSize: 12,
+                        fontWeight: bold,
+                        color: textColor.withValues(alpha: 0.6),
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      image,
+                      style: const TextStyle(fontSize: 72),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      title,
+                      style: fancyText.copyWith(
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const Divider(
+                      height: 40,
+                      thickness: 1,
+                      color: Colors.black12,
+                    ),
+                    Text(
+                      content,
+                      textAlign: TextAlign.center,
+                      style: onlyText.copyWith(
+                        fontSize: 20,
+                        fontWeight: medium,
+                        color: textColor.withValues(alpha: 0.9),
+                        height: 1.4,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
               ),
             ),
           ],

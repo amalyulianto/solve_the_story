@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:solve_the_story/styles.dart';
-import 'package:solve_the_story/widgets/reusable_text.dart';
 
-class StoryButton extends StatelessWidget {
-  const StoryButton(
-      {super.key,
-      required this.text,
-      required this.subText,
-      required this.bgColor,
-      required this.isLocked,
-      required this.isDark,
-      required this.emoji,
-      required this.onTap});
+class StoryButton extends StatefulWidget {
+  const StoryButton({
+    super.key,
+    required this.text,
+    required this.subText,
+    required this.bgColor,
+    required this.isLocked,
+    required this.isDark,
+    required this.emoji,
+    required this.onTap,
+  });
+
   final String text;
   final String subText;
   final String emoji;
@@ -22,68 +23,105 @@ class StoryButton extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
+  State<StoryButton> createState() => _StoryButtonState();
+}
+
+class _StoryButtonState extends State<StoryButton>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100),
+    );
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 0.95).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      customBorder: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      onTap: onTap,
-      child: Container(
-        // height: 150,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15), gradient: bgColor),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 12,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ReusableText(
-                    text: emoji,
-                    size: 64,
-                    fontWeight: bold,
-                    color: Colors.white,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  ReusableText(
-                    text: text,
-                    size: 20,
-                    fontWeight: FontWeight.bold,
-                    textAlign: TextAlign.start,
-                    color: isDark ? Colors.white : Colors.black,
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  ReusableText(
-                    text: subText,
-                    textAlign: TextAlign.start,
-                    size: 16,
-                    fontWeight: FontWeight.normal,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                  ),
-                ],
+    return GestureDetector(
+      onTapDown: (_) => _controller.forward(),
+      onTapUp: (_) {
+        _controller.reverse();
+        widget.onTap();
+      },
+      onTapCancel: () => _controller.reverse(),
+      child: ScaleTransition(
+        scale: _scaleAnimation,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: widget.bgColor,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
               ),
+            ],
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.1),
+              width: 1,
             ),
-            isLocked
-                ? SizedBox(
-                    child: Icon(
-                      IconlyBold.lock,
-                      color: isDark ? Colors.white : Colors.black,
+          ),
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Text(
+                  widget.emoji,
+                  style: const TextStyle(fontSize: 40),
+                ),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.text,
+                      style: fancyText.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: widget.isDark ? Colors.white : Colors.black,
+                      ),
                     ),
-                  )
-                : const SizedBox(
-                    width: 0,
-                  ),
-          ],
+                    const SizedBox(height: 4),
+                    Text(
+                      widget.subText,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: widget.isDark ? Colors.white70 : Colors.black87,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              if (widget.isLocked)
+                Icon(
+                  IconlyBold.lock,
+                  color: widget.isDark ? Colors.white : Colors.black,
+                  size: 20,
+                ),
+            ],
+          ),
         ),
       ),
     );

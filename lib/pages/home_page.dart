@@ -5,7 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:solve_the_story/pages/choose_deck_page.dart';
 import 'package:solve_the_story/providers/audio_provider.dart';
 import 'package:solve_the_story/styles.dart';
-import 'package:solve_the_story/widgets/reusable_text.dart';
+import 'package:solve_the_story/widgets/audio_toggle.dart';
+import 'package:solve_the_story/widgets/mysterious_background.dart';
+import 'package:solve_the_story/widgets/show_modal_story.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,9 +29,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   void dispose() {
-    WidgetsBinding.instance.addObserver(this);
-    final audioProvider = Provider.of<AudioProvider>(context, listen: false);
-    audioProvider.dispose();
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -47,92 +47,133 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        centerTitle: true,
-        actions: <Widget>[
-          Consumer<AudioProvider>(
-            builder: (context, audioProvider, child) {
-              return IconButton(
-                icon: Icon(
-                  audioProvider.isPlaying
-                      ? IconlyLight.volume_up
-                      : IconlyLight.volume_off,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  if (audioProvider.isPlaying) {
-                    audioProvider.pauseMusic();
-                  } else {
-                    audioProvider.resumeMusic();
-                  }
-                },
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(
-              IconlyLight.setting,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+    final audioProvider = Provider.of<AudioProvider>(context, listen: false);
+    return MysteriousBackground(
+      topOverlay: [
+        Positioned(
+          top: -100,
+          right: -50,
           child: Container(
-            constraints: BoxConstraints(
-              minHeight: MediaQuery.of(context).size.height,
-              maxWidth: 500,
+            width: 300,
+            height: 300,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: accentGold.withValues(alpha: 0.05),
             ),
-            child: Column(
-              children: [
-                Spacer(),
-                Image.asset('assets/images/logoMark.png'),
-                ReusableText(
-                    text: 'Solve the story!',
-                    size: 28,
-                    fontWeight: bold,
-                    color: white1,
-                    textAlign: TextAlign.center),
-                SizedBox(height: 20), // Spacer(),
-                Center(
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width - 48,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: black1,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              side:
-                                  BorderSide(color: Colors.white, width: 1.5))),
-                      onPressed: () {
-                        Get.to(() => ChooseDeckPage(),
-                            transition: Transition.cupertino,
-                            duration: const Duration(milliseconds: 800));
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 12),
-                        child: ReusableText(
-                          text: 'Play',
-                          color: Colors.white,
-                          size: 24,
-                          textAlign: TextAlign.center,
-                          fontWeight: bold,
-                          maxLines: 2,
-                        ),
-                      ),
+          ),
+        ),
+        Positioned(
+          bottom: -150,
+          left: -100,
+          child: Container(
+            width: 400,
+            height: 400,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: accentOrange.withValues(alpha: 0.05),
+            ),
+          ),
+        ),
+      ],
+      child: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const AudioToggle(),
+                  IconButton(
+                    icon: Icon(IconlyLight.info_circle, color: primaryLight),
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) => ShowModalStory(),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+            const Spacer(),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: goldGradient,
+                  boxShadow: [
+                    BoxShadow(
+                      color: accentGold.withValues(alpha: 0.2),
+                      blurRadius: 30,
+                      spreadRadius: 5,
+                    ),
+                  ],
+                ),
+                child: Image.asset(
+                  'assets/images/logoMark.png',
+                  height: 100,
+                ),
+              ),
+            ),
+            const SizedBox(height: 32),
+            Text(
+              "SOLVE THE STORY",
+              style: fancyText.copyWith(
+                color: primaryLight,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 6,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              "EVERY SHADOW HAS A TALE",
+              style: TextStyle(
+                color: primaryLight.withValues(alpha: 0.5),
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+                letterSpacing: 4,
+              ),
+            ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 48),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: accentOrange,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    elevation: 8,
+                    shadowColor: accentOrange.withValues(alpha: 0.4),
+                  ),
+                  onPressed: () {
+                    audioProvider.playMusic();
+                    Get.to(() => const ChooseDeckPage(),
+                        transition: Transition.fadeIn,
+                        duration: const Duration(milliseconds: 600));
+                  },
+                  child: const Text(
+                    "START JOURNEY",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
                     ),
                   ),
                 ),
-                Spacer(),
-              ],
+              ),
             ),
-          ),
+            const SizedBox(height: 60),
+          ],
         ),
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:solve_the_story/styles.dart';
-import 'package:solve_the_story/widgets/reusable_text.dart';
 
 class ShowModalStory extends StatelessWidget {
   ShowModalStory({
@@ -14,78 +13,77 @@ class ShowModalStory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 2.2,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
+      height: MediaQuery.of(context).size.height / 1.8,
+      decoration: BoxDecoration(
+        color: espresso,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.5),
+            blurRadius: 20,
+            spreadRadius: 5,
+          ),
+        ],
       ),
       child: Column(
         children: [
-          const SizedBox(
-            height: 12,
+          const SizedBox(height: 12),
+          Container(
+            width: 40,
+            height: 4,
+            decoration: BoxDecoration(
+              color: primaryLight.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(2),
+            ),
           ),
+          const SizedBox(height: 24),
           Expanded(
             child: PageView(
               controller: _controller,
               children: const [
                 HowToModal(
-                  title: 'How to play!',
+                  title: 'HOW TO PLAY',
                   icon: IconlyLight.game,
-                  titleColor: Colors.black,
                   text:
-                      """This game is played in group. First, you need to choose a person to act as the narrator. He/she will read the story to the other player.
-      
-      Tips: Choose the one you think has a good understanding of a story, a storyteller maybe!""",
-                  textColor: Colors.black,
+                      """This game is played in a group. First, choose a narrator. They will read the story and its solution (keep it a secret!).""",
                 ),
                 HowToModal(
-                  title: 'Game Instructions',
-                  icon: IconlyLight.game,
-                  titleColor: Colors.black,
+                  title: 'INVESTIGATE',
+                  icon: IconlyLight.search,
                   text:
-                      """The narrator reads the solution, but keep it a secret! Then the rest of the players must ask questions to solve the story. The narrator should only answer "yes", "no", or "not relevant".""",
-                  textColor: Colors.black,
+                      """The rest of the players must ask questions to solve the mystery. The narrator can only answer "Yes", "No", or "Not Relevant".""",
                 ),
                 HowToModal(
-                  title: 'Game Instructions',
-                  icon: IconlyLight.game,
-                  titleColor: Colors.black,
+                  title: 'SOLVE IT',
+                  icon: IconlyLight.discovery,
                   text:
-                      """Now this is the narrator's role to guide the game! There is only one solution which should only be revealed at the end of the game. If the players can't get it of it is confusing enough, the narrator can help by giving their own interpretation of the story. Hints can be given too if it's a deadlock!""",
-                  textColor: Colors.black,
+                      """The narrator guides the game. If stuck, hints can be given. The solution is revealed only when properly guessed!""",
                 ),
                 HowToModal(
-                  title: 'Have fun!',
-                  icon: IconlyLight.game,
-                  titleColor: Colors.black,
+                  title: 'HAVE FUN',
+                  icon: IconlyLight.heart,
                   text:
-                      """Remember, use your imaginations in this game because the answer can either be so obvious, or so unsolvable. The point of the game is just to have fun by solving mystery, so have fun!""",
-                  textColor: Colors.black,
+                      """Use your imagination! Some answers are obvious, others are twisted. The goal is to enjoy the mystery together.""",
                 ),
               ],
             ),
           ),
-          // const SizedBox(
-          //   height: 12,
-          // ),
           SmoothPageIndicator(
             controller: _controller,
             count: 4,
-            effect: WormEffect(
-                activeDotColor: blue1,
-                dotColor: Colors.black45,
-                dotHeight: 8,
-                dotWidth: 8,
-                spacing: 4
-                // dotWidth: 20,
-                ),
+            effect: ExpandingDotsEffect(
+              activeDotColor: accentGold,
+              dotColor: primaryLight.withValues(alpha: 0.2),
+              dotHeight: 8,
+              dotWidth: 8,
+              expansionFactor: 3,
+              spacing: 8,
+            ),
           ),
-          const SizedBox(
-            height: 24,
-          ),
+          const SizedBox(height: 32),
         ],
       ),
     );
@@ -97,50 +95,51 @@ class HowToModal extends StatelessWidget {
     super.key,
     required this.title,
     required this.text,
-    required this.textColor,
-    required this.titleColor,
     this.icon = IconlyLight.heart,
   });
 
   final String title;
   final String text;
-  final Color textColor;
-  final Color titleColor;
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(
           children: [
-            const SizedBox(
-              height: 16,
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: accentGold.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                icon,
+                color: accentGold,
+                size: 48,
+              ),
             ),
-            Icon(
-              icon,
-              color: Colors.black,
-              size: 64,
-            ),
-            ReusableText(
-              text: title,
-              color: titleColor,
-              size: 20,
+            const SizedBox(height: 24),
+            Text(
+              title,
+              style: fancyText.copyWith(
+                color: primaryLight,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2,
+              ),
               textAlign: TextAlign.center,
-              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            ReusableText(
-              text: text,
-              maxLines: 10,
-              size: 14,
-              fontWeight: FontWeight.normal,
-              color: textColor,
+            const SizedBox(height: 16),
+            Text(
+              text,
+              style: TextStyle(
+                color: primaryLight.withValues(alpha: 0.7),
+                fontSize: 16,
+                height: 1.6,
+              ),
               textAlign: TextAlign.center,
             ),
           ],

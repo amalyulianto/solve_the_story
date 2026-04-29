@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solve_the_story/pages/home_page.dart';
+import 'package:solve_the_story/styles.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,18 +25,51 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: espresso,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 48),
+            TweenAnimationBuilder(
+              duration: const Duration(seconds: 1),
+              tween: Tween<double>(begin: 0, end: 1),
+              builder: (context, double value, child) {
+                return Opacity(
+                  opacity: value,
+                  child: Transform.scale(
+                    scale: 0.8 + (0.2 * value),
+                    child: child,
+                  ),
+                );
+              },
               child: Image.asset(
-                'assets/images/logo_alapakadala.png',
-                color: Colors.white,
+                'assets/images/logoMark.png',
+                height: 150,
               ),
-            ), // Your logo here
+            ),
+            const SizedBox(height: 24),
+            TweenAnimationBuilder(
+              duration: const Duration(seconds: 1),
+              tween: Tween<double>(begin: 0, end: 1),
+              builder: (context, double value, child) {
+                return Opacity(
+                  opacity: value,
+                  child: child,
+                );
+              },
+              child: Text(
+                'SOLVE THE STORY',
+                style: fancyText.copyWith(
+                  color: primaryLight,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 10,
+                ),
+              ),
+            ),
           ],
         ),
       ),
