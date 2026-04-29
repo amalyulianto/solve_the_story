@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 );
               },
               child: Text(
-                'SOLVE THE STORY',
+                'DARK RIDDLES',
                 style: fancyText.copyWith(
                   color: primaryLight,
                   fontSize: 24,

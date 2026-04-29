@@ -29,9 +29,7 @@ class StoryProvider extends ChangeNotifier {
       var story = allStories.firstWhere(
         (s) => s.id == doneStory.id,
       );
-      if (story != null) {
-        story.isDone = true;
-      }
+      story.isDone = true;
     }
   }
 

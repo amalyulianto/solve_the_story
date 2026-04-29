@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: GetMaterialApp(
-        title: 'Game Ngobrol',
+        title: 'Dark Riddles',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,

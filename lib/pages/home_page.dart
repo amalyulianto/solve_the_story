@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: goldGradient,
+                  gradient: mysteriousGradient,
                   boxShadow: [
                     BoxShadow(
                       color: accentGold.withValues(alpha: 0.2),
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             ),
             const SizedBox(height: 32),
             Text(
-              "SOLVE THE STORY",
+              "DARK RIDDLES",
               style: fancyText.copyWith(
                 color: primaryLight,
                 fontSize: 32,
